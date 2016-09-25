@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        open_data_dc=ckanext.open_data_dc.plugin:Open_Data_DcPlugin
+	[babel.extractors]
+	ckan = ckan.lib.extract:extract_ckan
+    

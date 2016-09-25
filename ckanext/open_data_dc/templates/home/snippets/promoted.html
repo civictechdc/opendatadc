@@ -1,0 +1,22 @@
+{% set intro = g.site_intro_text %}
+
+
+
+<div class="module-content">
+  <header>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Welcome to Open Data DC") }}</h1>
+      <p>
+        This is a <i>free and open-sourced</i> catalog of data from Washington D.C. 
+        It aims to provide a stable platform that combines crowd sourced datasets
+        as well as data from the <a href="http://opendata.dc.gov/">D.C. Government</a>
+     </p>
+    <p>This data portal is proudly maintained by <a href="http://codefordc.org">Code for DC</a></p>
+    {% endif %}
+  </header>
+
+  {% block home_image %}
+  {% endblock %}
+</div>

@@ -1,0 +1,32 @@
+<div role="hero" class="hero">
+  <div class="container">
+    <div class="row row1">
+      <div class="span12 col1">
+        {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+<div role="search">
+    <div class="container">
+        <div class="row row2">
+            <div class="span12 col1">
+                {% block search %}
+                    {% snippet 'home/snippets/search.html' %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<div role="main">
+  <div class="container">
+    <div class="row row3">
+      <div class="span12 col1">
+        {% snippet 'snippets/most_popular_groups.html',
+             groups=h.open_data_dc_most_popular_groups()  %}
+      </div>
+    </div>
+  </div>
+</div>

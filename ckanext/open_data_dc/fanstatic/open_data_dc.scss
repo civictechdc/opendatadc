@@ -1,0 +1,275 @@
+///////////
+// Fonts //
+///////////
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+
+
+
+////////////
+// COLORS //
+////////////
+
+// $primary-color-dark:   #455A64;
+// $primary-color:        #607D8B;
+// $primary-color-light:  #CFD8DC;
+// $primary-color-text:   #FFFFFF; // FOR ICONS
+// $accent-color:         #FF5252;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #757575;
+// $divider-color:        #BDBDBD;
+
+$primary-color-dark:   #303F9F;
+$primary-color:        #3F51B5;
+$primary-color-light:  #C5CAE9;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF5252;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+
+/////////////
+// General //
+/////////////
+body {
+    font-family: 'Roboto Slab', serif;
+    background: $primary-color-dark;
+}
+
+.btn-primary {
+    background: $accent-color;
+    color: $primary-color-text;
+    text-shadow: none;
+    border: 0;
+
+    &:hover {
+        color: $accent-color;
+        background: $primary-color-text;
+        border: 1px solid $accent-color;
+    }
+}
+
+.btn-success {
+    background: $primary-color-light;
+    color: $primary-color-text;
+    text-shadow: none;
+    border: 0;
+
+    &:hover {
+        background: $primary-color-text;
+        color: $primary-color-dark;
+        border: 1px solid $primary-color-dark;
+    }
+}
+
+.nav-tabs {
+    a {
+        color: $accent-color;
+    }    
+}
+
+.media-grid {
+    & {
+        background: $primary-color-text;
+        margin-left: 0;
+    }
+    
+
+    .media-item {    
+        text-align: center;
+
+        &:hover {
+            background: $primary-color-light;
+            border: none;
+            box-shadow: none;
+        }
+
+        .media-view {
+            border: none;
+            box-shadow: none;            
+        }
+        
+    }
+}
+
+//////////////////////
+// Account Masthead //
+/////////////////////
+
+.account-masthead {
+    background-color: $primary-color-dark;
+}
+/* The "bubble" containing the number of new notifications. */
+.account-masthead .account .notifications a span {
+  background-color: $primary-color-dark;
+}
+.account-masthead .account ul li {
+    border-left: 1px solid $divider-color;
+}
+/* The text and icons in the user account info. */
+.account-masthead .account ul li a {
+  color: $primary-color-text;
+}
+/* The user account info text and icons, when the user's pointer is hovering
+   over them. */
+.account-masthead .account ul li a:hover {
+  color: $accent-color;
+  background-color: $primary-color-text;
+}
+
+
+//////////////////////
+// Main Masthead ////
+/////////////////////
+
+.masthead {
+  background-color: $primary-color-dark;
+  border-top: 1px solid $divider-color;
+
+  .header-image {
+      font-size: 1.8em;
+      padding-top: .4em;
+      
+      > a  {
+          > img {
+              padding-right: .2em;
+              width: 3em;  
+          }
+
+          & {
+              text-decoration: none;
+          }        
+      }
+  }
+}
+/* The "navigation pills" in the masthead (the links to Datasets,
+   Organizations, etc) when the user's pointer hovers over them. */
+.masthead .navigation .nav-pills li a:hover {
+  color: $primary-color-text;
+  background: $accent-color;
+}
+/* The "active" navigation pill (for example, when you're on the /dataset page
+   the "Datasets" link is active). */
+.masthead .navigation .nav-pills li.active a {
+  background-color: $primary-color-text;
+  color: $accent-color;
+}
+/* The "box shadow" effect that appears around the search box when it
+   has the keyboard cursor's focus. */
+.masthead input[type="text"]:focus {
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+}
+
+////////////
+// Footer //
+///////////
+.site-footer {
+    background: $primary-color-dark;
+
+    .footer-image {
+        font-size: 1.8em;
+        padding-top: .4em;
+        
+        > a  {
+            > img {
+                padding-right: .2em;
+                width: 3em;  
+            }
+
+            & {
+                text-decoration: none;
+            }        
+        }
+    }
+
+    .ckan-footer-logo {
+        color: $primary-color-text;
+    }
+}
+
+/////////////////////
+/// Page Template ///
+/////////////////////
+
+div[role="main"] {
+    .primary {
+        width: 75%;
+    }
+}
+
+////////////////
+/// Homepage ///
+////////////////
+
+.homepage {
+
+    .flash-messages {
+
+        .alert-info {
+            color: $accent-color;
+            background: $primary-color-text;
+        }
+    }
+
+    > div {
+        &[role="hero"] {
+            background: $primary-color-dark;
+            color: $primary-color-text;
+
+            a {
+                color: $accent-color;
+            }
+        }
+
+        &[role="search"] {
+            background: $primary-color-light;
+
+            .tags {
+                background: $primary-color-light;
+                color: $primary-color-dark;
+
+                .request-data {
+                    float: right;
+                }
+            }
+
+            .module-search {
+
+                & {
+                    background-color: $primary-color-light;
+                    color: $accent-color;
+                    text-shadow: -1px 0 $primary-color-text, 0 1px $primary-color-text, 1px 0 $primary-color-text, 0 -1px $primary-color-text;
+
+                    h3.heading {
+                        font-size: 3em;
+                        margin-bottom: 1em;
+                    }
+                }
+
+                .module-content {
+                    background: $primary-color-light;
+                }
+            }
+        }
+
+        &[role="main"] {
+
+            .categories-list a:hover {
+                text-decoration: none;
+            }
+
+            .category {
+                background: $primary-color-text;
+                color: $primary-text-color;
+                width: 15em;
+                min-height: 5em;
+                padding: 1em;
+                text-align: center;   
+                display: inline-block;
+                margin-left: 1em;     
+            }            
+        }
+    }
+}
+

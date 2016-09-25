@@ -1,0 +1,15 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+ckanext/__init__.py
+ckanext/open_data_dc/__init__.py
+ckanext/open_data_dc/plugin.py
+ckanext/open_data_dc/tests/__init__.py
+ckanext/open_data_dc/tests/test_plugin.py
+ckanext_open_data_dc.egg-info/PKG-INFO
+ckanext_open_data_dc.egg-info/SOURCES.txt
+ckanext_open_data_dc.egg-info/dependency_links.txt
+ckanext_open_data_dc.egg-info/entry_points.txt
+ckanext_open_data_dc.egg-info/pbr.json
+ckanext_open_data_dc.egg-info/top_level.txt
