@@ -1,0 +1,12 @@
+version: '2'
+services:  
+  db:
+    container_name: db
+    image: ckan/postgresql:latest
+    ports:
+      - "5432:5432"
+  solr:
+    container_name: solr
+    image: ckan/solr:latest
+    ports:
+        - "8983:8983"
