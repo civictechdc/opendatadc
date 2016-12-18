@@ -27,7 +27,7 @@ sudo ln -s /Users/{your-home}/ckan/etc /etc/ckan
 ```
 mkdir -p ~/ckan/lib/ckan/default
 sudo chown 'whoami' /usr/local/ckan/default
-virtualenv --not-site-packages /usr/local/ckan/default
+virtualenv --no-site-packages /usr/local/ckan/default
 . /usr/local/ckan/default/bin/activate
 ``` 
 4. If no errors have occurred, your command prompt should look something like `(default) $ _`. You now need to install the 
