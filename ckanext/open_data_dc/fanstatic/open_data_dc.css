@@ -1,0 +1,143 @@
+@import "https://fonts.googleapis.com/css?family=Roboto+Slab";
+body {
+  font-family: 'Roboto Slab', serif;
+  background: #000099; }
+
+.btn-primary {
+  background: #FF5252;
+  color: #FFFFFF;
+  text-shadow: none;
+  border: 0; }
+  .btn-primary:hover {
+    color: #FF5252;
+    background: #FFFFFF;
+    border: 1px solid #FF5252; }
+
+.btn-success {
+  background: #9999ff;
+  color: #FFFFFF;
+  text-shadow: none;
+  border: 0; }
+  .btn-success:hover {
+    background: #FFFFFF;
+    color: #000099;
+    border: 1px solid #000099; }
+
+.nav-tabs a {
+  color: #FF5252; }
+
+.media-grid {
+  background: #FFFFFF;
+  margin-left: 0; }
+.media-grid .media-item {
+  text-align: center; }
+  .media-grid .media-item:hover {
+    background: #9999ff;
+    border: none;
+    box-shadow: none; }
+  .media-grid .media-item .media-view {
+    border: none;
+    box-shadow: none; }
+
+.account-masthead {
+  background-color: #000099; }
+
+/* The "bubble" containing the number of new notifications. */
+.account-masthead .account .notifications a span {
+  background-color: #000099; }
+
+.account-masthead .account ul li {
+  border-left: none; }
+
+/* The text and icons in the user account info. */
+.account-masthead .account ul li a {
+  color: #FFFFFF; }
+
+/* The user account info text and icons, when the user's pointer is hovering
+   over them. */
+.account-masthead .account ul li a:hover {
+  color: #FF5252;
+  background-color: #FFFFFF; }
+
+.masthead {
+  background-color: #000099;
+  border-top: 1px solid #BDBDBD; }
+  .masthead .header-image {
+    font-size: 1.8em;
+    padding-top: .4em; }
+    .masthead .header-image > a > img {
+      padding-right: .2em;
+      width: 3em; }
+    .masthead .header-image > a {
+      text-decoration: none; }
+
+/* The "navigation pills" in the masthead (the links to Datasets,
+   Organizations, etc) when the user's pointer hovers over them. */
+.masthead .navigation .nav-pills li a:hover {
+  color: #FFFFFF;
+  background: #FF5252; }
+
+/* The "active" navigation pill (for example, when you're on the /dataset page
+   the "Datasets" link is active). */
+.masthead .navigation .nav-pills li.active a {
+  background-color: #FFFFFF;
+  color: #FF5252; }
+
+/* The "box shadow" effect that appears around the search box when it
+   has the keyboard cursor's focus. */
+.masthead input[type="text"]:focus {
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7); }
+
+.site-footer {
+  background: #000099; }
+  .site-footer .footer-image {
+    font-size: 1.8em;
+    padding-top: .4em; }
+    .site-footer .footer-image > a > img {
+      padding-right: .2em;
+      width: 3em; }
+    .site-footer .footer-image > a {
+      text-decoration: none; }
+  .site-footer .ckan-footer-logo {
+    color: #FFFFFF; }
+
+div[role="main"] .primary {
+  width: 75%; }
+
+.homepage .flash-messages .alert-info {
+  color: #FF5252;
+  background: #FFFFFF; }
+.homepage > div[role="hero"] {
+  background: #000099;
+  color: #FFFFFF; }
+  .homepage > div[role="hero"] a {
+    color: #FF5252; }
+.homepage > div[role="search"] {
+  background: #9999ff; }
+  .homepage > div[role="search"] .tags {
+    background: #9999ff;
+    color: #000099; }
+  .homepage > div[role="search"] .module-search {
+    background-color: #9999ff;
+    color: #FF5252;
+    text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF; }
+    .homepage > div[role="search"] .module-search h3.heading {
+      font-size: 3em;
+      margin-bottom: 1em; }
+  .homepage > div[role="search"] .module-search .module-content {
+    background: #9999ff; }
+.homepage > div[role="main"] .categories-list a:hover {
+  text-decoration: none; }
+.homepage > div[role="main"] .category {
+  background: #FFFFFF;
+  color: #212121;
+  width: 15em;
+  min-height: 5em;
+  padding: 1em;
+  text-align: center;
+  display: inline-block;
+  margin-left: 1em;
+  margin-bottom: 1.5em; }
+
+/*# sourceMappingURL=open_data_dc.css.map */
