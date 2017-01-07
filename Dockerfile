@@ -21,6 +21,11 @@ WORKDIR /usr/lib/ckan/default/src/ckanext-pages
 RUN python setup.py develop
 RUN pip install -r dev-requirements.txt
 WORKDIR /usr/lib/ckan/default/src
+RUN git clone https://github.com/conwetlab/ckanext-datarequests.git
+WORKDIR /usr/lib/ckan/default/src//ckanext-datarequests
+RUN python setup.py develop
+RUN pip install -r dev-requirements.txt
+WORKDIR /usr/lib/ckan/default/src
 COPY . ckanext-open_data_dc/
 WORKDIR /usr/lib/ckan/default/src/ckanext-open_data_dc
 RUN python setup.py develop
