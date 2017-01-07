@@ -18,11 +18,11 @@
 // $secondary-text-color: #757575;
 // $divider-color:        #BDBDBD;
 
-$primary-color-dark:   #303F9F;
-$primary-color:        #3F51B5;
-$primary-color-light:  #C5CAE9;
+$primary-color-dark:   #000099;
+$primary-color:        #0000ff;
+$primary-color-light:  #9999ff;
 $primary-color-text:   #FFFFFF;
-$accent-color:         #FF5252;
+$accent-color:         #ff0000;
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
@@ -59,6 +59,20 @@ body {
         background: $primary-color-text;
         color: $primary-color-dark;
         border: 1px solid $primary-color-dark;
+    }
+}
+
+.btn-danger {
+    background: $primary-color-text;
+    color: $accent-color;
+    text-shadow: none;
+    border: 1px solid $accent-color;
+
+    &:hover {
+        background: $accent-color;
+        color: $primary-color-text;
+        text-shadow: none;
+        border: 0;
     }
 }
 
@@ -104,7 +118,7 @@ body {
   background-color: $primary-color-dark;
 }
 .account-masthead .account ul li {
-    border-left: 1px solid $divider-color;
+    border-left: none;
 }
 /* The text and icons in the user account info. */
 .account-masthead .account ul li a {
@@ -228,10 +242,6 @@ div[role="main"] {
             .tags {
                 background: $primary-color-light;
                 color: $primary-color-dark;
-
-                .request-data {
-                    float: right;
-                }
             }
 
             .module-search {
@@ -260,14 +270,14 @@ div[role="main"] {
             }
 
             .category {
-                background: $primary-color-text;
                 color: $primary-text-color;
-                width: 15em;
+                width: 12em;
                 min-height: 5em;
                 padding: 1em;
                 text-align: center;   
                 display: inline-block;
                 margin-left: 1em;     
+                margin-bottom: 1.5em;
             }            
         }
     }

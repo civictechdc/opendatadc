@@ -1,7 +1,6 @@
 version: '2'
 services:
   ckan:
-    container_name: ckan
     # build: ./
     image: mkalish/opendatadc_ckan:1.0
     volumes: 

@@ -16,6 +16,13 @@ This repository includes the CKAN theme used by data.codefordc.org as well any c
 
 Thats it!  CKAN and all its services are now running
 
+### Test data
+Test data and admin users can be added very easily.
+
+1. From the directory where the source was cloned to run `docker-compose exec ckan bash`
+2. Run `paster sysadmin add admin -c /etc/ckan/default/development.ini`
+3. Run `paster create-test-data -c /etc/ckan/default/development.ini`
+
 ### Troubleshooting
 - Known issue: CKAN starts before the postgres and solr services have finished starting up
 - Solution: Run `docker-compose restart ckan`

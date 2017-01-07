@@ -4,14 +4,14 @@ body {
   background: #000099; }
 
 .btn-primary {
-  background: #FF5252;
+  background: #ff0000;
   color: #FFFFFF;
   text-shadow: none;
   border: 0; }
   .btn-primary:hover {
-    color: #FF5252;
+    color: #ff0000;
     background: #FFFFFF;
-    border: 1px solid #FF5252; }
+    border: 1px solid #ff0000; }
 
 .btn-success {
   background: #9999ff;
@@ -23,21 +23,19 @@ body {
     color: #000099;
     border: 1px solid #000099; }
 
-.nav-tabs a {
-  color: #FF5252; }
-
-.media-grid {
+.btn-danger {
   background: #FFFFFF;
-  margin-left: 0; }
-.media-grid .media-item {
-  text-align: center; }
-  .media-grid .media-item:hover {
-    background: #9999ff;
-    border: none;
-    box-shadow: none; }
-  .media-grid .media-item .media-view {
-    border: none;
-    box-shadow: none; }
+  color: #ff0000;
+  text-shadow: none;
+  border: 1px solid #ff0000; }
+  .btn-danger:hover {
+    background: #ff0000;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: 0; }
+
+.nav-tabs a {
+  color: #ff0000; }
 
 .account-masthead {
   background-color: #000099; }
@@ -56,7 +54,7 @@ body {
 /* The user account info text and icons, when the user's pointer is hovering
    over them. */
 .account-masthead .account ul li a:hover {
-  color: #FF5252;
+  color: #ff0000;
   background-color: #FFFFFF; }
 
 .masthead {
@@ -75,13 +73,13 @@ body {
    Organizations, etc) when the user's pointer hovers over them. */
 .masthead .navigation .nav-pills li a:hover {
   color: #FFFFFF;
-  background: #FF5252; }
+  background: #ff0000; }
 
 /* The "active" navigation pill (for example, when you're on the /dataset page
    the "Datasets" link is active). */
 .masthead .navigation .nav-pills li.active a {
   background-color: #FFFFFF;
-  color: #FF5252; }
+  color: #ff0000; }
 
 /* The "box shadow" effect that appears around the search box when it
    has the keyboard cursor's focus. */
@@ -106,13 +104,13 @@ div[role="main"] .primary {
   width: 75%; }
 
 .homepage .flash-messages .alert-info {
-  color: #FF5252;
+  color: #ff0000;
   background: #FFFFFF; }
 .homepage > div[role="hero"] {
   background: #000099;
   color: #FFFFFF; }
   .homepage > div[role="hero"] a {
-    color: #FF5252; }
+    color: #ff0000; }
 .homepage > div[role="search"] {
   background: #9999ff; }
   .homepage > div[role="search"] .tags {
@@ -120,7 +118,7 @@ div[role="main"] .primary {
     color: #000099; }
   .homepage > div[role="search"] .module-search {
     background-color: #9999ff;
-    color: #FF5252;
+    color: #ff0000;
     text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF; }
     .homepage > div[role="search"] .module-search h3.heading {
       font-size: 3em;
@@ -130,9 +128,8 @@ div[role="main"] .primary {
 .homepage > div[role="main"] .categories-list a:hover {
   text-decoration: none; }
 .homepage > div[role="main"] .category {
-  background: #FFFFFF;
   color: #212121;
-  width: 15em;
+  width: 12em;
   min-height: 5em;
   padding: 1em;
   text-align: center;
