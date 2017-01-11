@@ -37,6 +37,19 @@ body {
 .nav-tabs a {
   color: #ff0000; }
 
+.media-grid {
+  background: #FFFFFF;
+  margin-left: 0; }
+.media-grid .media-item {
+  text-align: center; }
+  .media-grid .media-item:hover {
+    background: #9999ff;
+    border: none;
+    box-shadow: none; }
+  .media-grid .media-item .media-view {
+    border: none;
+    box-shadow: none; }
+
 .account-masthead {
   background-color: #000099; }
 
@@ -115,11 +128,12 @@ div[role="main"] .primary {
   background: #9999ff; }
   .homepage > div[role="search"] .tags {
     background: #9999ff;
-    color: #000099; }
+    color: #FFFFFF; }
+    .homepage > div[role="search"] .tags a {
+      color: #0000ff; }
   .homepage > div[role="search"] .module-search {
     background-color: #9999ff;
-    color: #ff0000;
-    text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF; }
+    color: #FFFFFF; }
     .homepage > div[role="search"] .module-search h3.heading {
       font-size: 3em;
       margin-bottom: 1em; }
