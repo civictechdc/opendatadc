@@ -241,15 +241,18 @@ div[role="main"] {
 
             .tags {
                 background: $primary-color-light;
-                color: $primary-color-dark;
+                color: $primary-color-text;
+
+                a {
+                    color: $primary-color;
+                }
             }
 
             .module-search {
 
                 & {
                     background-color: $primary-color-light;
-                    color: $accent-color;
-                    text-shadow: -1px 0 $primary-color-text, 0 1px $primary-color-text, 1px 0 $primary-color-text, 0 -1px $primary-color-text;
+                    color: $primary-color-text;
 
                     h3.heading {
                         font-size: 3em;
