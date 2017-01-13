@@ -5,12 +5,7 @@
       <a href="{{ h.url_for('group_read', action='read', id=group.name) }}">
         <div class="category">
           <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" />
-          <h3>{{ group.display_name }}</h3>
-          {% if group.package_count %}
-            <strong>{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
-          {% else %}
-            <span>{{ _('0 Datasets') }}</span>
-          {% endif %}
+          <h3>{{ group.display_name}}</h3> 
         </div>        
       </a>      
     {% endfor %}
