@@ -151,4 +151,8 @@ div[role="main"] .primary {
   margin-left: 1em;
   margin-bottom: 1.5em; }
 
+/* Default breadcrumb delimiter is a slash; change it to a chevron */
+.toolbar .breadcrumb li:after {
+  content: " > "; }
+
 /*# sourceMappingURL=open_data_dc.css.map */
