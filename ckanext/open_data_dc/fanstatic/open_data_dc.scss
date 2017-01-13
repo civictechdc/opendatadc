@@ -286,3 +286,13 @@ div[role="main"] {
     }
 }
 
+
+///////////////////
+/// Breadcrumbs ///
+///////////////////
+
+/* Default breadcrumb delimiter is a slash; change it to a chevron */
+
+.toolbar .breadcrumb li:after {
+  content: " > ";
+}
