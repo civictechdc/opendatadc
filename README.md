@@ -48,3 +48,12 @@ Is a very large subject and the best way to get started is to read the [CKAN doc
 
 
 Feel free to contribute here or join us on [Waffle.io](https://waffle.io/codefordc/data.codefordc.org)
+
+## Deploying a new version
+1. Login to the remote production machine through ssh
+2. Activate the default virtualenv environment (should say (default) in terminal)
+3. Navigate to `/usr/lib/ckan/default/src/ckanext-open-data-dc`
+4. Grab the latest from master `git pull origin`
+5. Run `python setup.py develop`
+6. Run `sudo service apache2 reload`
+7. Veriy [Data Portal](data.codefordc.org) is reachable and changes are there
