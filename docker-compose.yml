@@ -11,7 +11,7 @@ services:
       - db
       - solr
   db:
-    image: ckan/postgresql:latest
+    image: ckan/postgresql:rel-2.2.1-1
     ports:
       - "5432:5432"
   solr:
