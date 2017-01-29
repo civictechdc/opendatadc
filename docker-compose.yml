@@ -15,7 +15,7 @@ services:
     ports:
       - "5432:5432"
   solr:
-    image: ckan/solr:rel-2.2.1-1
+    image: ckan/solr:2.2.3-2
     links:
       - db
     ports:
