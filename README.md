@@ -14,7 +14,9 @@ This repository includes the CKAN theme used by data.codefordc.org as well any c
 2. Navigate to `opendatadc` (where the source was just cloned into)
 3. Run `docker-compose up -d`
 
-Thats it!  CKAN and all its services are now running
+Thats it!  CKAN and all its services are now running.
+
+To view a local demo version of the site, open your favorite web browser and go to `http://localhost:5000/`.
 
 ### Test data
 Test data and admin users can be added very easily.
