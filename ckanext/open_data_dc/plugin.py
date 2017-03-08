@@ -12,6 +12,16 @@ def most_popular_groups():
 
     return groups
 
+def least_popular_groups():
+    '''Return a sorted list of the groups with the fewest datasets.'''
+
+    # Get a list of all the site's groups from CKAN, sorted by number of
+    # datasets.
+    groups = toolkit.get_action('group_list')(
+        data_dict={'sort': 'package_count asc', 'all_fields': True})
+
+    return groups
+
 class Open_Data_DcPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
 
@@ -31,4 +41,7 @@ class Open_Data_DcPlugin(plugins.SingletonPlugin):
         # Template helper function names should begin with the name of the
         # extension they belong to, to avoid clashing with functions from
         # other extensions.
-        return {'open_data_dc_most_popular_groups': most_popular_groups}
+        return {
+            'open_data_dc_most_popular_groups': most_popular_groups,
+            'open_data_dc_least_popular_groups': least_popular_groups
+        }
