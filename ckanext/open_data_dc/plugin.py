@@ -1,6 +1,19 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
+# def get_with_tag(tag):
+#
+#     packages = toolkit.get_action('package_search')(
+#         data_dict={'fq': ('tags:'+tag)})
+#
+#     return packages
+
+def get_with_tag(tag):
+
+    packages = toolkit.get_action('package_search')(
+        data_dict={'fq': 'tags:'+tag})
+
+    return packages
 
 def most_popular_groups():
     '''Return a sorted list of the groups with the most datasets.'''
@@ -43,5 +56,6 @@ class Open_Data_DcPlugin(plugins.SingletonPlugin):
         # other extensions.
         return {
             'open_data_dc_most_popular_groups': most_popular_groups,
-            'open_data_dc_least_popular_groups': least_popular_groups
+            'open_data_dc_least_popular_groups': least_popular_groups,
+            'open_data_dc_get_with_tag': get_with_tag
         }

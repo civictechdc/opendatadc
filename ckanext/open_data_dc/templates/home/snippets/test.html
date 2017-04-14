@@ -1,1 +1,19 @@
-<p>Blah blah blah</p>
+<section class="module-content categories-list">
+  <div>
+    {% for group in h.open_data_dc_get_with_tag('promoted').results %}
+      <a href="{{ h.url_for('dataset_read', action='read', id=group.name) }}">
+        <div class="category">
+          <!-- <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" /> -->
+          <h3>{{ group.title }} (this is a link!)</h3>
+        </div>
+      </a>
+      <!-- <h3>{{ group }}</h3> -->
+      <!-- <a href="{{ h.url_for('group_read', action='read', id=group.name) }}">
+        <div class="category">
+          <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" />
+          <h3>{{ group.display_name}}</h3>
+        </div>
+      </a> -->
+    {% endfor %}
+  </div>
+<section>
