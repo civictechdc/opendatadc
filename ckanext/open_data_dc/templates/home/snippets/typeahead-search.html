@@ -1,0 +1,94 @@
+{% set tags = h.get_facet_items_dict('tags', limit=3) %}
+{% set placeholder = _('E.g. environment') %}
+
+
+
+<style>
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-menu {
+  background-color: #fff;
+  outline: 1px solid #000;
+  color: #555;
+  width: 100%;
+}
+.tt-suggestion {
+    text-indent: 16px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px solid #767676;
+}
+.tt-selectable {}
+.tt-highlight {}
+
+</style>
+<div class="module module-search module-narrow module-shallow span6 col1">
+  <form id="index-search" class="module-content search-form" method="get" action="{% url_for controller='package', action='search' %}">
+    <h3 class="heading">{{ _("DC Open Data Search") }}</h3>
+    <div id="the-basics" class="search-input control-group search-giant">
+      <input class="typeahead search" type="text" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />
+      <button type="submit">
+        <i class="icon-search"></i>
+        <span>{{ _('Search') }}</span>
+      </button>
+    </div>
+  </form>
+</div>
+<div class="module module-search module-narrow module-shallow span6 col2">
+  <div class="tags">
+    <div class="request-data">
+      <p>{{ _('Looking for a dataset you don\'t see?  It might have been requested:') }} <a href="/datarequest">{{_('Data Wish List')}}</a></p>
+      <p><a href="/datarequest/new">{{ _("If you don't see it, ask for it!") }}</a></p>
+    </div>
+  </div>
+    <script src="http://twitter.github.io/typeahead.js/js/jquery-1.10.2.min.js"></script>
+    <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+<script>
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
+
+var ckanTags = ["GIS", "Transportation", "Transit", "Education", "Locations", "Streets", "Schools", "Housing", "Public Services", "Infrastructure", "Budget", "Zoning", "Boundaries", "Procurement", "Transparency", "Office of Contracti...", "Census", "Accountability", "Purchase Orders", "PO", "Health", "Financials", "DCPS", "Government Operation", "Traffic", "Tourism", "Real Estate", "Environment", "DC", "Criminal Justice", "Planning", "OCTO", "Historical", "Broadband", "Wards", "USDA", "Summer", "Poverty", "OSSE", "HUD", "Elections", "ERS", "Buildings", "Roads", "Public Health", "Points", "Districts", "Athletics", "ACS", "2010"
+];
+
+$('#the-basics .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
+  name: 'ckanTags',
+  source: substringMatcher(ckanTags)
+});
+</script>  
+</div>
