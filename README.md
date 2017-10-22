@@ -4,14 +4,14 @@ This repository is an open-source project for [data.codefordc.org](http://data.c
 
 This repository includes the CKAN theme used by data.codefordc.org as well any custom pages used by the site.
 
-## Setup instructions
+# Setup instructions
 
-### Prerequisites
+## Prerequisites
 
 - Git
 - [Docker](https://docs.docker.com/engine/installation/) for your operating system
 
-### Cloning the repository
+## Cloning the repository
 
 First, you'll need to fork this repository and clone it onto your computer. To fork it, click "Fork" in the upper-right corner of this page. You can then clone your fork using one of these two methods:
 - in the terminal, navigate to whatever directory you want the repository to be cloned into and run `git clone https://github.com/<username>/opendatadc` (replace `<username>` with your GitHub username)
@@ -19,27 +19,33 @@ First, you'll need to fork this repository and clone it onto your computer. To f
 
 This is the only time you will need to do this step. In future development sessions, you can just run the steps in the "Getting started" section.
 
-### Getting started
+# Getting started
+## Quick Started
+This project uses docker to speed up on boarding and make it easier to maintain.  
 
-In the terminal, navigate to `opendatadc` (or whatever directory you cloned the repository into) and run `docker-compose up -d`. Thats it! CKAN and all its services should now be running.
+To start the application navigate to the directory you cloned the project to (most likely _opendatadc_) and run:
+`docker-compose up` and you should see ![starting](assets/starting-up.png)  After a few minutes you should see ![started](assets/started.png)
 
-To view a local demo version of the site, open your favorite web browser and go to `http://localhost:5000/`. You should see a demo version of the Open Data DC site!
+Navigate to localhost and you'll find CKAN running with the code for dc theme. It should look something like: ![started-site](assets/started-site.png)  To stop the app run `ctrl-c`
 
-If the page doesn't load after a minute or so, try running `docker-compose restart ckan`. (You may be having an issue that sometimes happens where CKAN starts before the postgres and solr services have finished starting up.)
+## Up and Down
+Sometimes its convenient to start the application without taking up a terminal window.  To do so, run `docker-compose up -d`; the application will now start in the background and will be avaible at `localhost` (might take a few minutes to start up).  Now run: `docker-compose ps` and you should see the running containers ![docker-compose ps](assets/app-ps.png)
 
-Alternatively, particularly if you are on Windows, try navigating to `192.168.99.100:5000`. (On Windows and OSX, docker-machine creates a virtual machine and will assign it a local IP address on your machine. In most cases it will be `192.168.99.100`, but you can verify this by running `docker-machine ip` in the terminal. On Linux, the docker daemon is running natively, so all the docker processes will be exposed on `127.0.0.1`.)
+### Stopping
+`docker-compose stop`
 
-### Test data
+### Starting
+`docker-compose start`
 
-Test data and admin users can be added very easily.
+## Setting up Admin account
+Run: `docker-compose exec ckan ckan-paster --plugin=ckan  sysadmin add admin email=admin@admin  -c /etc/ckan/default/ckan.ini`
 
-From the directory where the source was cloned, run `docker-compose exec ckan bash`. You should now see a promt within the terminal that begins with `/usr/lib/ckan/default/src/ckan#`.
+And fill in the prompts: ![admin-prompt](assets/admin-prompt.png)
 
-To create a test user, run `paster sysadmin add admin -c /etc/ckan/default/development.ini`.
+## Setting up test-data
+Very basic test data can be setup; alternatively sets can be exported from the real site and uploaded to your local one.
 
-To create test data, run `paster create-test-data -c /etc/ckan/default/development.ini`.
-
-To exit this prompt, run `exit`.
+To set up test data run: `docker-compose exec ckan ckan-paster --plugin=ckan  create-test-data  -c /etc/ckan/default/ckan.ini`
 
 ## Local development
 
@@ -63,9 +69,10 @@ Feel free to contribute here or join us on [Waffle.io](https://waffle.io/codefor
 ## Deploying a new version
 
 1. Login to the remote production machine through ssh
-2. Activate the default virtualenv environment (should say (default) in terminal)
-3. Navigate to `/usr/lib/ckan/default/src/ckanext-open-data-dc`
-4. Grab the latest from master `git pull origin`
-5. Run `python setup.py develop`
-6. Run `sudo service apache2 reload`
-7. Veriy [Data Portal](data.codefordc.org) is reachable and changes are there
+2. Run `docker-compose rm ckan`
+3. Run `docker-compose pull`
+4. Run `docker-compose up -d`
+
+### Re-indexing solr
+This needs to get run when solr is updated
+`docker-compose exec ckan ckan-paster --plugin=ckan search-index rebuild -c /etc/ckan/default/ckan.ini`
