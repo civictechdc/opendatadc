@@ -23,6 +23,10 @@ initialize_extensions() {
   pip install ckanext-showcase
   pip install -e 'git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages'
   pip install ckanext-datarequests
+  pip install ckanext-pdfview
+  pip install -e "git+https://github.com/okfn/ckanext-spatial.git#egg=ckanext-spatial"
+  pip install ckanext-geoview
+  pip install -e  git+https://github.com/ckan/ckanext-googleanalytics.git#egg=ckanext-googleanalytics
 }
 
 set_environment () {
