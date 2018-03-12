@@ -30,7 +30,7 @@ services:
       - CKAN_CONFIG=/etc/ckan/default
       - DB_ENV_POSTGRES_USER=ckan_default
       - DB_ENV_POSTGRES_PASSWORD=codefordc_ckan
-      - CKAN_SITE_URL=http://nginx
+      - CKAN_SITE_URL=http://ec2-52-90-17-42.compute-1.amazonaws.com/
   solr:
     image: codefordc2/ckan-solr
     ports:
