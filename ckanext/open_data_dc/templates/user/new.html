@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{% block secondary_content %}
+  {% block help %}
+    <div class="row p-2">
+        <div class="col">
+            <h2 class="module-heading">{{ _('Why Sign Up?') }}</h2>
+            <p>{% trans %}Create datasets, groups and other exciting things{% endtrans %}</p>    
+        </div>
+    </div>
+  <section class="module module-narrow module-shallow">
+    {% block help_inner %}
+    <div class="module-content">
+    </div>
+    {% endblock %}
+  </section>
+  {% endblock %}
+{% endblock %}

@@ -44,7 +44,7 @@ class Open_Data_DcPlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'open_data_dc')
+        toolkit.add_resource('fanstatic', 'odc')
 
     def get_helpers(self):
         '''Register the most_popular_groups() function above as a template

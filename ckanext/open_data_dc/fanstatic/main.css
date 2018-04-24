@@ -1,0 +1,106 @@
+body {
+    background: #eeeeee;
+}
+
+.toolbar {
+    margin-top: 70px;
+}
+
+.side-panel {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 200;
+    bottom: 0;
+    width: 0;
+    position: fixed;
+    overflow-y: auto;
+    background: #2B4888;   
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.hide-heading {
+    display: none;
+}
+
+.main-card {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.side-panel .list-group {
+    background: #2B4888;
+     
+}
+
+.side-panel .list-group .list-group-item {
+    border-top: black 2px;
+    border-bottom: black 2px;
+    background: #2B4888;
+    color: #fff;
+    transition: .3s;  
+}
+
+.side-panel .list-group .list-group-item:hover {
+    text-decoration: underline;
+}
+
+nav.navbar.header {
+    /* transition: margin-left .5s;  */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#side-panel-open {
+    height: 100%;
+    background: #DE4156;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    font-size: 31px;
+    color: #fff;
+    size: 6em;
+}
+
+#side-panel-open i {
+    font-size: 40px;
+}
+
+.hide {
+    display: none;
+}
+
+.header-image {
+    height: 500px;
+    background: url("/2016-capitol-christmas-tree-lit.jpg") center center no-repeat;
+}
+
+.header-image h2 {
+    color: #fff;
+}
+
+.header-image {
+    color: #fff;
+}
+
+/* .twitter-typeahead {
+    width: 100%;
+}
+
+.tt-menu {
+    background-color: #fff;
+    outline: 1px solid #000;
+    color: #555;
+    width: 100%;
+}
+
+.tt-suggestion {
+    text-indent: 16px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px solid #767676;
+} */

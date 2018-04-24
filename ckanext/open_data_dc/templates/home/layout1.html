@@ -1,41 +1,43 @@
-<div role="hero" class="hero">
-  <div class="container">
-    <div class="row row1">
-      <div class="span12 col1">
-        {% block promoted %}
-          {% snippet 'home/snippets/promoted.html' %}
-        {% endblock %}
-      </div>
+<div class="main container-fluid">
+  <div class="row header-image align-items-center">
+    <div class="col-12 text-center">
+      <h2 class="mt-3">
+        Welcome to DC Open Data!          
+      </h2>
+      <p>Something</p>
+      {% block search %}
+          {% snippet 'home/snippets/typeahead-search.html' %}
+      {% endblock %}
     </div>
   </div>
-</div>
-<div role="search">
-    <div class="container">
-        <div class="row row2">
-            <div class="span12 col1">
-                {% block search %}
-                    {% snippet 'home/snippets/typeahead-search.html' %}
-                {% endblock %}
-            </div>
+  <div class="row">
+    <div class="col-12">
+      
+    </div>
+  </div>
+    <div role="main">
+      <div class="container">
+        <div class="row row3">
+          <div class="span12 col1">
+            {% snippet 'snippets/most_popular_groups.html',
+                  groups=h.open_data_dc_most_popular_groups()  %}
+          </div>
         </div>
-    </div>
-</div>
-<div role="main">
-  <div class="container">
-    <div class="row row3">
-      <div class="span12 col1">
-        {% snippet 'snippets/most_popular_groups.html',
-             groups=h.open_data_dc_most_popular_groups()  %}
       </div>
     </div>
-  </div>
-</div>
-<div role="main">
-  <div class="container">
-    <div class="row row3">
-      <div class="span12 col1">
-        {% snippet 'home/snippets/test.html'  %}
+    <div role="main">
+      <div class="container">
+        <div class="row row3">
+          <div class="span12 col1">
+            {% snippet 'home/snippets/test.html'  %}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="row">
+        {% block promoted %}
+        {% snippet 'home/snippets/promoted.html' %}
+      {% endblock %}
+    </div>
 </div>
+

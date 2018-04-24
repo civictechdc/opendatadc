@@ -2,116 +2,52 @@
 
 {% block header_wrapper %}
 {% block header_account %}
-  <header class="account-masthead">
-    <div class="container">
-      {% block header_account_container_content %}
-        {% if c.userobj %}
-          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
-            <ul class="unstyled">
-              {% block header_account_logged %}
-              {% if c.userobj.sysadmin %}
-                <li>
-                  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
-                    <i class="icon-legal" aria-hidden="true"></i>
-                    <span class="text">{{ _('Admin') }}</span>
-                  </a>
-                </li>
-              {% endif %}
-              <li>
-                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                  <span class="username">{{ c.userobj.display_name }}</span>
-                </a>
-              </li>
-              {% block header_account_settings_link %}
-                <li>
-                  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                    <span>{{ _('Settings') }}</span>
-                  </a>
-                </li>
-              {% endblock %}
-              {% block header_account_log_out_link %}
-                <li>
-                  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-                    <span>{{ _('Log out') }}</span>
-                  </a>
-                </li>
-              {% endblock %}
-              {% endblock %}
-            </ul>
-          </div>
-        {% else %}
-          <nav class="account not-authed">
-            <ul class="unstyled">
-              {% block header_account_notlogged %}
-              <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
-              {% if h.check_access('user_create') %}
-                <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
-              {% endif %}
-              {% endblock %}
-            </ul>
-          </nav>
+  <div class="side-panel shadow-lg">
+    <div class="list-group">
+      <a id="side-panel-close" href="#" class="list-group-item list-group-item-action"><i class="material-icons">close</i></a>
+      <a href="/organization" class="list-group-item list-group-item-action">Organizations</a>
+      <a href="/group" class="list-group-item list-group-item-action">Categories</a>
+      <a href="/dataset" class="list-group-item list-group-item-action">Data</a>
+      <a href="/about" class="list-group-item list-group-item-action">About</a>
+      <a href="/datarequests" class="list-group-item list-group-item-action">Data Requests</a>
+      {% if c.userobj %}
+        {% if c.userobj.sysadmin %}
+          <a class="list-group-item list-group-item-action" href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+            Administration
+          </a>
         {% endif %}
-      {% endblock %}
-    </div>
-  </header>
-{% endblock %}
-<header class="navbar navbar-static-top masthead">
-  {% block header_debug %}
-    {% if g.debug and not g.debug_supress_header %}
-      <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-    {% endif %}
-  {% endblock %}
-  <div class="container">
-    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {# The .header-image class hides the main text and uses image replacement for the title #}
-    <hgroup class="{{ g.header_class }} pull-left">
-
-      {% block header_logo %}
-        {% if g.site_logo %}
-          <a class="logo" href="{{ h.url('home') }}"><!--<img src="/logo.png" alt="{{ g.site_title }}" title="{{ g.site_title }}" />-->Open Data DC</a>
-        {% else %}
-          <h1>
-            <a href="{{ h.url('home') }}">{{ g.site_title }}</a>
-          </h1>
-          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-        {% endif %}
-      {% endblock %}
-
-    </hgroup>
-
-    <div class="nav-collapse collapse">
-
-      {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav nav-pills">
-            {% block header_site_navigation_tabs %}
-              {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Categories')),
-                ('about', _('About'))
-              ) }}
-            {% endblock %}
-            <li><a href="/datarequests">Data Requests</a></li>
-          </ul>
-        </nav>
-      {% endblock %}
-
-      {% block header_site_search %}
-        <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-          <div class="field"> <!-- argh. inside the form we be! -->
-            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" />
-            <button class="btn-search" type="submit"><i class="icon-search"></i></button>
-          </div>
-        </form>
-      {% endblock %}
-
+        <a class="list-group-item list-group-item-action" href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+          {{ c.userobj.display_name }}
+        </a>
+        <a class="list-group-item list-group-item-action" href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+          {{ _('Settings') }}
+        </a>
+        <a class="list-group-item list-group-item-action" href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+          {{ _('Log out') }}
+        </a>
+      {% else %}
+        <a class="list-group-item list-group-item-action" href="/user/login">Log In</a>
+        <a class="list-group-item list-group-item-action" href="/user/register">Register</a>
+      {% endif %}
     </div>
   </div>
-</header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-white header">
+    <span href="#" class="text-center" id="side-panel-open" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="material-icons align-middle">view_headline</i>
+    </span>
+    <a class="navbar-brand ml-5" href="{{ h.url('home') }}">Open Data DC</a>
+    <div class="navbar-nav d-none d-md-flex">
+      <a class="nav-item nav-link" href="/dataset">Data</a>
+      {% if c.userobj %}
+      <a class="nav-item nav-link" href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}">{{ _('Settings') }}</a>
+      <a class="nav-item nav-link" href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">{{ _('Log out') }}</a>
+      {% else %}
+      <a class="nav-item nav-link " href="/user/login">Login</a>
+      {% if h.check_access('user_create') %}
+      <a class="nav-item nav-link" href="/user/register">Register</a>
+      {% endif %}
+      {% endif %}
+    </div>
+{% endblock %}
+</nav>
 {% endblock %}

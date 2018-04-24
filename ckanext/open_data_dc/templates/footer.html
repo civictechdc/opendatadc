@@ -1,31 +1,16 @@
-<footer class="site-footer">
-    <div class="container">
-        {% block footer_content %}
-        <div class="row">
-            <div class="span6 col1 footer-image">
-                <a class="logo" href="{{ h.url('home') }}"><!--<img src="/logo.png" alt="{{ g.site_title }}" title="{{ g.site_title }}" />-->Open Data DC</a>
-            </div>
-            <div class="span3 col2 footer-links">
-                {% block footer_nav %}
-                <ul class="unstyled">
-                    {% block footer_links %}
-                    <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
-                    <li><a href="http://codefordc.org" target="_blank">{{_('Code for DC')}}</a></li>
-                    {% endblock %}
-                </ul>
-            </div>
-            <div class="span3 col3 footer-links">
-                <ul class="unstyled">
-                    {% block footer_links_ckan %} {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-                    <li>{% trans %}<strong>Powered by</strong> <a class="ckan-footer-logo" href="http://ckan.org" target="_blank">CKAN</a>{% endtrans %}</li>
-                    <li><a href="{{ api_url }}" target="_blank">{{ _('CKAN API') }}</a></li>
-                    {% endblock %}
-                </ul>
-                {% endblock %}
-            </div>
-        </div>
-        {% endblock %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-white">
+    <a class="navbar-brand ml-5" href="{{ h.url('home') }}">Open Data DC</a>
+    <div class="navbar-nav d-none d-md-flex">
+    <a class="nav-item nav-link" href="/dataset">Data</a>
+        {% if c.userobj %}
+        <a class="nav-item nav-link" href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a>
+        <a class="nav-item nav-link" href="http://codefordc.org" title="Code for DC">Code for DC</a>
+        {% else %}
+        <a class="nav-item nav-link " href="/user/login">Login</a>
+        {% if h.check_access('user_create') %}
+        <a class="nav-item nav-link" href="/user/register">Register</a>
+        {% endif %}
+        {% endif %}
+        {% block footer_debug %} {% if g.debug %} {% include 'snippets/debug.html' %} {% endif %} {% endblock %}
     </div>
-
-    {% block footer_debug %} {% if g.debug %} {% include 'snippets/debug.html' %} {% endif %} {% endblock %}
-</footer>
+</nav>

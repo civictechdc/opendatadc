@@ -1,11 +1,18 @@
 {% ckan_extends %}
 
 {% block styles %}
-  {{ super() }}
+
   {# Import example_theme.css using Fanstatic.
      'example_theme/' is the name that the example_theme/fanstatic directory
      was registered with when the toolkit.add_resource() function was called.
      'example_theme.css' is the path to the CSS file, relative to the root of
-     the fanstatic directory. #}
-  {% resource 'open_data_dc/open_data_dc.css' %}
+     the fanstatic directory. #}     
+  {% resource 'odc/open_data_dc.css' %}
+  {% resource 'odc/bootstrap.css' %}
+  {% resource 'odc/bootstrap.js' %}
+  {% resource 'odc/main.css' %}
+  {% resource 'odc/main.js' %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+  
 {% endblock %}
