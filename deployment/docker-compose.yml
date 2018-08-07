@@ -1,0 +1,49 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    links:
+      - ckan
+    restart: always
+    volumes:
+      - ../nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+  ckan:
+    image: codefordc2/cfdc-ckan:latest
+    restart: on-failure
+    volumes: 
+      - ../ckanext:/usr/lib/ckan/default/ckanext-open_data_dc/ckanext
+      - ../etc/production:/etc/ckan/default
+    links:
+      - solr
+      - redis
+    environment:
+      - DB_PORT_5432_TCP_ADDR=${DB_URL}
+      - DB_PORT_5432_TCP_PORT=5432
+      - SOLR_PORT_8983_TCP_ADDR=solr
+      - REDIS_PORT_6379_TCP_ADDR=redis
+      - REDIS_PORT_6379_TCP_PORT=6379
+      - SOLR_PORT_8983_TCP_PORT=8983
+      - CKAN_CONFIG=/etc/ckan/default
+      - DB_ENV_POSTGRES_USER=${DB_USER}
+      - DB_ENV_POSTGRES_PASSWORD=${DB_PASSWORD}
+      - CKAN_SITE_URL=${SITE_URL}
+      - CKAN_DATASTORE_WRITE_URL=${DATASTORE_DB_WRITE_URL}
+      - CKAN_DATASTORE_READ_URL=${DATASTORE_DB_READ_URL}
+      - CKAN_SQLALCHEMY_URL=${CKAN_DB_URL}
+  solr:
+    image: codefordc2/ckan-solr
+    restart: on-failure
+  redis:
+    image: redis:latest
+    restart: on-failure
+  datapusher:
+    image: easyckan/ckan-datapusher:2.6
+    restart: on-failure
+    links:
+      - nginx
+      - ckan
+    ports:
+      - "8800:8800"
+
