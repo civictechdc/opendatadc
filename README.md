@@ -76,3 +76,5 @@ Feel free to contribute here or join us on [Waffle.io](https://waffle.io/codefor
 ### Re-indexing solr
 This needs to get run when solr is updated
 `docker-compose exec ckan ckan-paster --plugin=ckan search-index rebuild -c /etc/ckan/default/ckan.ini`
+
+> Note: running this might require a restart via `docker-compose restart ckan`
