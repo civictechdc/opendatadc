@@ -1,0 +1,66 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('About') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('About'), 'home.about' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+
+      <h1>About</h1>
+      <h2> Open Data DC is where you can find data for civic hacking in Washington DC. </h2>
+
+      <p> Open Data DC is a project of <a href="https://codefordc.org/"> Code for DC. </a> </p>
+
+      <p> Code for DC brings together community members and subject matter experts with data enthusiasts and techies to help make a better DC for all of its residents. We open data and help solve issues.</p>
+
+      <h2> A few examples of Code for DC projects:</h2>
+      <ul>
+        <li> Partnered with non-profits to build a client intake system and create a comprehensive database of affordable housing data </li>
+        <li> Worked with the city to control the rat problem and connect case workers to the right programs for their clients</li>
+        <li> Created a website to help connect residents to their local ANC representatives.</li>
+      </ul>
+
+      </hr>
+
+      <h2> What is civic hacking?</h2>
+      <p>Civic hacking is a creative and often technological approach to solving civic problems. These civic problems run the gamut from voter registration and public education to helping consumers buy homes and choose financial advisors. Often civic hacking involves the use of government data to make governments more accountable, but the goals of civic hacking are as diverse as those who might call themselves hackers. Civic hackers can be programmers, designers, data scientists, good communicators, civic organizers, entrepreneurs, government employees and anyone willing to get his or her hands dirty solving problems. </p> <a href ="https://opengovdata.io/2014/civic-hacking/Open"> - Government Data: The Book. By Joshua Tauberer. Second Edition: 2014.</a>
+
+      </hr>
+
+      <h2> Is Open Data DC the same as data.dc.gov? </h2>
+      <p> Open Data DC is different from <a href="http://opendata.dc.gov/"> data.dc.gov</a>. Open Data DC is a group of civic minded software developers, data scientists, and designers. We are not affiliated with any government entity. </p>
+      <p>data.dc.gov is a service of the Government of the District of Columbia where they provide access to hundreds of their data sets.</p>
+
+      </hr>
+
+      <h2>Can I help improve this site?</h2>
+      <p>Absolutely! See the Open Data DC GitHub repository: <a href="https://github.com/codefordc/opendatadc"> </a> or come to the next Meetup. </p>
+
+
+      <h2> Come help Code for DC build more!</h2>
+      <p> You can find our monthly hacking sessions on <a href="https://www.meetup.com/Code-for-DC/"> Meetup. </a></p>
+
+      </hr>
+
+      <h3> Contributors </h3>
+      <ul>
+        <li> Michael Kalish</li>
+        <li> Greg Jordan-Detamore</li>
+        <li> Albert Bowden</li>
+        <li> Matt Bailey </li>
+        <li> Jeff Hale </li>
+      </ul>
+
+      </hr>
+
+      <p> Please share this site and link back with credit Open Data DC for any data sets you find here.</p>
+
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
