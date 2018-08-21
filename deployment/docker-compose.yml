@@ -15,6 +15,7 @@ services:
     volumes: 
       - ../ckanext:/usr/lib/ckan/default/ckanext-open_data_dc/ckanext
       - ../etc/production:/etc/ckan/default
+      - ckan-data:/var/lib/ckan
     links:
       - solr
       - redis
@@ -46,4 +47,8 @@ services:
       - ckan
     ports:
       - "8800:8800"
+
+volumes:
+  ckan-data:
+    external: true
 
