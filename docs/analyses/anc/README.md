@@ -4,3 +4,7 @@
 - [current_anc_membership.csv](cleaned_data/current_anc_membership.csv) is the resulting CSV.
 - [anc_election_cleaner.R](scripts/anc_election_cleaner.R) is like anc_elections.ipnyb but different.
 - [election_history_R.csv](cleaned_data/election_history_R.csv) is the resulting data.
+
+
+- [historical_commissioners.pdf](raw_data/historical_commissioners.pdf) is data from 1979-2012 on occupants of ANC seats, unfortunately in PDF form
+- [historical_commissioners.txt](raw_data/historical_commissioners.txt) is the beginning of an attempt to parse it
