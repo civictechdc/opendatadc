@@ -12,10 +12,10 @@ import pandas as pd
 # In[3]:
 
 
-dc_2012 = pd.read_csv('Data/November_6_2012_General_and_Special_Election_Certified_Results.csv')
-dc_2014 = pd.read_csv('Data/November_4_2014_General_Election_Certified_Results.csv')
-dc_2016 = pd.read_csv('Data/November_4_2014_General_Election_Certified_Results.csv')
-dc_2018 = pd.read_csv('Data/November_6_2018_General_Election_Certified_Results.csv')
+dc_2012 = pd.read_csv('../raw_data/November_6_2012_General_and_Special_Election_Certified_Results.csv')
+dc_2014 = pd.read_csv('../raw_data/November_4_2014_General_Election_Certified_Results.csv')
+dc_2016 = pd.read_csv('../raw_data/November_4_2014_General_Election_Certified_Results.csv')
+dc_2018 = pd.read_csv('../raw_data/November_6_2018_General_Election_Certified_Results.csv')
 
 
 # 2012-2016 had consistent headers. 2018 was renamed to be consistent.
@@ -153,5 +153,5 @@ df.tail()
 
 
 # save progress
-df.to_csv('anc_electoral_history_2012_2018.csv')
+df.to_csv('../cleaned_data/anc_electoral_history_2012_2018.csv')
 

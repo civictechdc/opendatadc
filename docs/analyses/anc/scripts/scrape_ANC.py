@@ -63,7 +63,7 @@ current_members.shape
 # In[19]:
 
 
-current_members.to_csv("current_anc_membership.csv")
+current_members.to_csv("../cleaned_data/current_anc_membership.csv")
 
 
 # In[20]:
