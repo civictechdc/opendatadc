@@ -1,4 +1,0 @@
-- [anc_elections.ipnyb](anc_elections.ipynb) contains the script to parse ANC Election results from the DC Board of Elections website.
-- [anc_electoral_history_2012_2018.csv](anc_electoral_history_2012_2018.csv) is the resulting CSV file.
-- [scrape_ANC.ipynb](scrape_ANC.ipynb) contains the code to scrape the current ANC membership from [https://anc.dc.gov/](https://anc.dc.gov/).
-- [current_anc_membership.csv](current_anc_membership.csv) is the resulting CSV.
