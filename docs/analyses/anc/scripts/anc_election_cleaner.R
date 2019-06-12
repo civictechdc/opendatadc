@@ -48,7 +48,7 @@ for(year in years){
 	
 	# keep ANC obs and vote / registration totals (by precinct)
 	keepers <- grep(reg, data$contest_name)
-	keepers <- c(keepers, grep("total", lower(data$contest_name)))
+	keepers <- c(keepers, grep("total", tolower(data$contest_name)))
 	data <- data[keepers,]
 	
 	print("dropped non-ANC obs (rows/cols)")
@@ -81,6 +81,8 @@ for(year in years){
 	
 	# some years have whitespace in candidate names
 	data$candidate <- strwrap(data$candidate)
+	# some names have commas, which will not read in properly
+	data$candidate <- str_remove(data$candidate, ",")
 
 
     #### Collapsing / Reshaping
@@ -179,6 +181,12 @@ for(year in years){
 # sort for easier sanity checking
 all.data <- all.data[order(all.data$year, all.data$contest_name),]
 
+# sort columns so they actually make sense
+sorted_names <- c("contest_name", "year", "ward", "anc", "smd", "smd_ballots", "smd_anc_votes",
+        "explicit_candidates", "winner", "winner_votes", "write_in_votes")
+# tack on any leftovers on the end so you're not dropping
+sorted_names <- c(sorted_names, setdiff(colnames(all.data), sorted_names))
+all.data <- select(all.data, sorted_names)
 
 write.table(all.data, file=paste(path, "/data/", "allyears", "_collapsed.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
