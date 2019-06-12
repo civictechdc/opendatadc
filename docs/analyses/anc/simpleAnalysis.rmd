@@ -1,0 +1,42 @@
+---
+title: "Simple analysis for ANC Election Data"
+author: "Data Portal People"
+date: "June 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is just a stand in for some basic analysis of the data contained in the subdirectories.  Feel free to prettyfy as you like.
+
+
+## Load Data
+
+```{r}
+require(tibble)
+require(readr)
+require(magrittr)
+require(dplyr)
+
+
+electionHistoryTable = read_csv('cleaned_data/election_history_R.csv')
+
+head(electionHistoryTable)
+
+```
+
+This should have some more tidying done to it, but here's an easy plot.  We should create columns for each ward and then the district name so that we can more easily filter down.
+
+Still...
+
+```{r}
+require(ggplot2)
+
+dataFor2012 <- electionHistoryTable %>% filter(year == 2012)
+
+dataFor2012 %>% ggplot(aes(x=contest_name,y=smd_anc_votes)) + geom_point() + xlab('Contest Name') + ylab('Single Member District Votes') + ggtitle('Votes in each ANC Single Member District for 2012')
+
+
+```
