@@ -1,5 +1,6 @@
 <section class="module-content categories-list">
   <div>
+    <h3>Featured datasets:</h3>
     {% for group in h.open_data_dc_get_with_tag('promoted').results %}
       <a href="{{ h.url_for('dataset_read', action='read', id=group.name) }}">
         <div class="category">
