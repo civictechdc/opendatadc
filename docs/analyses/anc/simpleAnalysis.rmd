@@ -100,8 +100,8 @@ ggplot(spreadDataForSegments) +
                     y=spreadDataForSegments$'2016',
                     yend=spreadDataForSegments$'2018',
                     color=smd)) +
-  labs(x="Year", y="Single Member Vote Total") +
-  ggtitle('Single Member Vote Total over Time for Ward 1 ANC A')
+  labs(x="Year", y="Single Member District Vote Total") +
+  ggtitle('Single Member District Vote Total over Time for Ward 1 ANC A')
 
 
 ```
