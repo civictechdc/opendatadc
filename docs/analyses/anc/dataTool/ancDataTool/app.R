@@ -50,12 +50,6 @@ ui <- fluidPage(
                                            "7" = 7,
                                            "8" = 8,
                                            "9" = 9),
-                           selected = 1),
-        checkboxGroupInput("year",h3("Year"),
-                           choices = list("2012" = 2012,
-                                          "2014" = 2014,
-                                          "2016" = 2016,
-                                          "2018" = 2018),
                            selected = 1)
         
         
@@ -64,7 +58,7 @@ ui <- fluidPage(
       
       # Show a plot of the generated distribution
       mainPanel(
-         tableOutput("table")
+        plotOutput("plot")
       )
    )
 )
@@ -74,10 +68,10 @@ server <- function(input, output) {
   
   electionHistoryTable = read_csv('election_history_R.csv')
   electionHistoryTable %<>% 
-    mutate(ward = as.factor(ward),smd = as.factor(smd),year=as.factor(year),anc=as.factor(anc)) %>% 
+    mutate(ward = as.factor(ward),smd = as.factor(smd),anc=as.factor(anc)) %>% 
     select(year,ward,anc,smd,smd_anc_votes)
    
-   output$table <- renderTable({
+   output$plot <- renderPlot({
      
      wardVal <- switch(input$ward,
                        "Ward 1" = 1,
@@ -89,16 +83,11 @@ server <- function(input, output) {
                        "Ward 7" = 7,
                        "Ward 8" = 8)
      
-     print(wardVal)
-     print(input$anc)
-     print(input$smd)
-     print(input$year)
      
      
-     electionHistoryTable %>% filter(ward==wardVal,
-                                     anc==input$anc,
-                                     smd==input$smd,
-                                     year %in% input$year) 
+     electionHistoryTable %>% 
+       filter(ward==wardVal,anc==input$anc,smd %in% input$smd) %>%  
+       ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line()
      
    })
 }
