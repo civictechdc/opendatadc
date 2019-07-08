@@ -24,6 +24,10 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(
         
+        # selectInput("dataSource",
+        #             label="Select Variable",
+        #             choices = c("Total Votes","Winner Votes","Winner Pct")),
+        
         selectInput("ward",
                     label="Select a Ward",
                     choices = c("Ward 1",
@@ -58,7 +62,9 @@ ui <- fluidPage(
       
       # Show a plot of the generated distribution
       mainPanel(
-        plotOutput("plot")
+        plotOutput("totalPlot"),
+        plotOutput("winnerPlot"),
+        plotOutput("pctPlot")
       )
    )
 )
@@ -69,27 +75,51 @@ server <- function(input, output) {
   electionHistoryTable = read_csv('election_history_R.csv')
   electionHistoryTable %<>% 
     mutate(ward = as.factor(ward),smd = as.factor(smd),anc=as.factor(anc)) %>% 
-    select(year,ward,anc,smd,smd_anc_votes)
+    select(year,ward,anc,smd,smd_anc_votes,winner_votes) %>%
+    mutate(winnerPct = winner_votes / smd_anc_votes)
    
-   output$plot <- renderPlot({
-     
-     wardVal <- switch(input$ward,
-                       "Ward 1" = 1,
-                       "Ward 2" = 2,
-                       "Ward 3" = 3,
-                       "Ward 4" = 4,
-                       "Ward 5" = 5,
-                       "Ward 6" = 6,
-                       "Ward 7" = 7,
-                       "Ward 8" = 8)
-     
-     
-     
-     electionHistoryTable %>% 
-       filter(ward==wardVal,anc==input$anc,smd %in% input$smd) %>%  
-       ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line()
-     
+  wardInput <- reactive({
+    switch(input$ward,
+           "Ward 1" = 1,
+           "Ward 2" = 2,
+           "Ward 3" = 3,
+           "Ward 4" = 4,
+           "Ward 5" = 5,
+           "Ward 6" = 6,
+           "Ward 7" = 7,
+           "Ward 8" = 8)
+  })
+    
+  reducedTable <- reactive({
+    
+    electionHistoryTable %>% 
+      filter(ward==wardInput(),anc==input$anc,smd %in% input$smd)
+  })
+  
+  
+   output$totalPlot <- renderPlot({
+  
+     reducedTable() %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line() + 
+       geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
+       ggtitle("Total Votes in SMD(s) vs. Time")
    })
+   
+   output$winnerPlot <- renderPlot({
+     
+     reducedTable() %>% ggplot(aes(x=year,y=winner_votes,color=smd)) + geom_line() + 
+       geom_point() + xlab("Year") + ylab("Winning Votes in SMD") + 
+       ggtitle("Winner Votes in SMD(s) vs. Time")  
+   })
+   
+   output$pctPlot <- renderPlot({
+     
+     reducedTable() %>% ggplot(aes(x=year,y=winnerPct,color=smd)) + geom_line() + 
+       geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
+       ggtitle("Winner Percentage in SMD(s) vs. Time")  
+   })
+   
+   
+   
 }
 
 # Run the application 
