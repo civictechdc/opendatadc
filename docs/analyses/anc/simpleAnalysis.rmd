@@ -1,0 +1,132 @@
+---
+title: "Simple analysis for ANC Election Data"
+author: "Data Portal People"
+date: "June 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is just a stand in for some basic analysis of the data contained in the subdirectories.  Feel free to prettyfy as you like.
+
+Note, the exiting csv file - election_history_R.csv - has one error in it, where names that have "junior" or "II" separate into an extra column.  This messes up the vote totals in column 15.  I believe that Austen has fixed this in a reasonable way and has an outstanding pull request to post it.  I did some manual updates myself locally to make things work below, but I'm not pushing that data up, since it will be superceeded. 
+
+
+## Load Data
+
+```{r warning=FALSE, message=FALSE}
+require(tibble)
+require(readr)
+require(magrittr)
+require(dplyr)
+
+
+electionHistoryTable = read_csv('cleaned_data/election_history_R.csv')
+electionHistoryTable %<>% mutate(ward = as.factor(ward),smd = as.factor(smd),year=as.factor(year),anc=as.factor(anc))
+
+glimpse(electionHistoryTable)
+
+
+```
+
+## Vote Totals in Single Member Districts
+
+Here's an easy plot, just to get something.  We should create columns for each ward and then the district name so that we can more easily filter down.  
+
+Still...
+
+```{r}
+require(ggplot2)
+
+electionHistoryTable %>% filter(year == 2012) %>% ggplot(aes(x=contest_name,y=smd_anc_votes)) + geom_point() + xlab('Contest Name') + ylab('Single Member District Votes') + ggtitle('Votes in each ANC Single Member District for 2012')
+
+
+```
+
+
+Apparently, those other columns actually exist and I was working too fast last week.  Let's go on and separate by ward to make things more visualizable.
+
+```{r}
+
+electionHistoryTable %>% filter(year == 2012,ward == 1) %>%  ggplot(aes(x=contest_name,y=smd_anc_votes)) + geom_point() + xlab('Contest Name') + ylab('Single Member District Votes In Ward 1') + ggtitle('Votes Ward 1 ANC Single Member District for 2012')
+
+```
+
+So this is still a bit too messy.  Let's separate out the ANCs by color
+
+
+```{r}
+
+electionHistoryTable %>% filter(year == 2012,ward == 1) %>%  ggplot(aes(x=smd,y=smd_anc_votes,color=anc)) + geom_point() + xlab('Single Member District Number') + ylab('Single Member District Votes In Ward 1') + ggtitle('Votes Ward 1 ANC Single Member District for 2012')
+
+```
+
+
+This is still too much of a mess and doesn't convey anything.  Maybe the more interesting thing to do here is to select out an ANC and then use colors to talk about time. 
+
+```{r}
+
+electionHistoryTable %>% filter(ward == 1,anc=="A") %>%  ggplot(aes(x=smd,y=smd_anc_votes,color=year)) + geom_point() + xlab('Single Member District Number') + ylab('Single Member District Votes In Ward 1') + ggtitle('Votes Ward 1 ANC A Single Member Districts over Time')
+
+```
+
+You can at least pick out a couple trends at this point, where turnout was at it's lowest in 2014 - Thanks Ebola - while its highest in 2016 (except for SMD 11.  What's up there?)  But things are still hard to pick out without thought.  Turning this on it's side and adding some lines to indicate time would probably help.
+
+```{r}
+require(tidyr)
+
+electionHistoryTable %>% filter(ward == 1,anc=="A") %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_point() + labs(x="Year",y="Single Member Vote Total") + ggtitle("Single Member Vote Total over Time for Ward 1 ANC A") 
+
+spreadDataForSegments = electionHistoryTable %>% filter(ward == 1,anc=="A") %>% select(year,smd_anc_votes,smd) %>% spread(year,smd_anc_votes)
+
+#tidyANCAData = electionHistoryTable %>% filter(ward == 1,anc=="A")
+
+
+ggplot(spreadDataForSegments) + 
+  geom_segment(aes(x=2012,
+                    xend=2014,
+                    y=spreadDataForSegments$`2012`,
+                    yend=spreadDataForSegments$'2014',
+                    color=smd)) +
+  geom_segment(aes(x=2014,
+                    xend=2016,
+                    y=spreadDataForSegments$'2014',
+                    yend=spreadDataForSegments$'2016',
+                    color=smd)) + 
+  geom_segment(aes(x=2016,
+                    xend=2018,
+                    y=spreadDataForSegments$'2016',
+                    yend=spreadDataForSegments$'2018',
+                    color=smd)) +
+  labs(x="Year", y="Single Member District Vote Total") +
+  ggtitle('Single Member District Vote Total over Time for Ward 1 ANC A')
+
+
+```
+
+
+
+I can't seem to get the points and the lines on the same plots, so I left them separate for now.  This should be possible, but I just need to find an example.  In any event, this seems half way reasonable to easily see temporal trends, and to highlight outlying districts.  The total number of districts still makes it a bit hard to connect district to color, so maybe there is a different way to think about it.  Alternatively, it should be reasonably straight forward to animate (or use a slider) across ANC so that information for the whole city was available.
+
+
+Below are some ideas of other directions that the analysis could take so that it could be useful either for journalists or citizen organizations.  We can examine on upcoming project nights.
+
+
+
+## Turn out int Single Member Districts
+
+## Winning Vote Requirements in Single Member Districts
+
+## Tracking individual candidates over Time
+
+## Incorporation of Campaign Finance Data
+
+
+## Visualization of Trends on Maps
+
+## Formal Identification of Outlying Districts
+
+## Prediction of Voting Behaviour in the Future
+
