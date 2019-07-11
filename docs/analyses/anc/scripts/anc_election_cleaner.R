@@ -2,7 +2,6 @@
 # Cleaning DC election data from 2012-2018
 # collapses and reshapes data such that each SMD election is an observation
 
-
 library(tidyverse)
 
 
@@ -74,10 +73,9 @@ for(year in years){
 	# I'm seeing observations for ward 2 precinct 129 anc 6D04. weird. is in original data?
 	# yes. test for this! could indicate data issues!
 	
-	
 	# reformat contest name to be just 6B04 e.g.
 	data$contest_name <- regmatches(data$contest_name, regexpr(reg, data$contest_name))
-	
+		
 	# break out to ANC and smd fields (and ward to check the above anomaly)
 	data$anc <- regmatches(data$contest_name, regexpr("[[:alpha:]]", data$contest_name))
 	data$smd <- regmatches(data$contest_name, regexpr("[[:digit:]]{2}$", data$contest_name))
@@ -110,6 +108,7 @@ for(year in years){
 	data <- inner_join(data, ward_totals, "ward")
 	
 	# ^^^^ NOTE a couple things are wrong with ward-level data right now and it is dropped at end of script
+
 
     # pause to analyze ward_check
 	ward_test <- data$ward_check == data$ward
@@ -196,7 +195,7 @@ all.data <- select(all.data, sorted_names)
 # for now, drop ward-level votes and ballots data because it's messed up
 all.data <- select(all.data, -ward_ballots, -ward_anc_votes)
 
-write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
+write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 
