@@ -1,4 +1,8 @@
 
+# Cleaning DC election data from 2012-2018
+# collapses and reshapes data such that each SMD election is an observation
+
+
 library(tidyverse)
 
 
@@ -10,10 +14,10 @@ all.data <- NULL
 for(year in years){
 	
 	# for running snippets and ignoring the loop:
-	# year <- 2018
+	# year <- 2012
 	
 	# read in data
-	data <- read.table(file=paste(path, "/data/", year, ".csv", sep=""), header=TRUE, sep=",")
+	data <- read.table(file=paste(path, "/raw_data/", year, ".csv", sep=""), header=TRUE, sep=",")
 		
 	print(paste("starting year", year))
 	print(colnames(data))	
@@ -87,7 +91,7 @@ for(year in years){
 
     #### Collapsing / Reshaping
     
-	## Preperatory work
+	## Preparatory work
 	
 	# assert that no precincts cross wards
 	# why? for aggregating totals from precinct to ward to make sense?
@@ -105,6 +109,7 @@ for(year in years){
 	# merge
 	data <- inner_join(data, ward_totals, "ward")
 	
+	# ^^^^ NOTE a couple things are wrong with ward-level data right now and it is dropped at end of script
 
     # pause to analyze ward_check
 	ward_test <- data$ward_check == data$ward
@@ -188,7 +193,10 @@ sorted_names <- c("contest_name", "year", "ward", "anc", "smd", "smd_ballots", "
 sorted_names <- c(sorted_names, setdiff(colnames(all.data), sorted_names))
 all.data <- select(all.data, sorted_names)
 
-write.table(all.data, file=paste(path, "/data/", "allyears", "_collapsed.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
+# for now, drop ward-level votes and ballots data because it's messed up
+all.data <- select(all.data, -ward_ballots, -ward_anc_votes)
+
+write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 
 
