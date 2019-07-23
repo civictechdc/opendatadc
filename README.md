@@ -18,7 +18,7 @@ Well, 1) someone gets paid to make government page, so it's currently a bit pret
 
 Great.  We can always use help.  We have both very short projects as well as longer term heavy lifts to fit your volunteer desires.  We like to see this overall project divided into three streams.
 
-* Portal Interface Development.  The portal is built on top of something called [CKAN](https://ckan.org/) which is an industry standard data portal framework used by many governmental organizations around the world.  We need people familiar with web development to improve usability as well as presentation of our datasets.  Here is a [page](./buildingTheSide.md) that describes how you can our page loaded onto your system for development using docker.
+* Portal Interface Development.  The portal is built on top of something called [CKAN](https://ckan.org/) which is an industry standard data portal framework used by many governmental organizations around the world.  We need people familiar with web development to improve usability as well as presentation of our datasets.  Here is a [page](./buildingTheSite.md) that describes how you can our page loaded onto your system for development using docker.
 
 * Data Analysis.  Most people who come to our project either have some experience with data work or really want to learn about it.  We try to define projects which lift existing data out of the portal for manipulation, study, and visualization that can be used by a variety of stakeholders either in Code for DC or around the city.
 
