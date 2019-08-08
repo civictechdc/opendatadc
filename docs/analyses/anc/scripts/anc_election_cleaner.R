@@ -2,6 +2,7 @@
 # Cleaning DC election data from 2012-2018
 # collapses and reshapes data such that each SMD election is an observation
 
+
 library(tidyverse)
 
 
@@ -195,6 +196,7 @@ all.data <- select(all.data, sorted_names)
 # for now, drop ward-level votes and ballots data because it's messed up
 all.data <- select(all.data, -ward_ballots, -ward_anc_votes)
 
+write.table(all.data, file=paste(path, "/data/", "allyears", "_collapsed.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
