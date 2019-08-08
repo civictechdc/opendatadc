@@ -1,4 +1,8 @@
 
+# Cleaning DC election data from 2012-2018
+# collapses and reshapes data such that each SMD election is an observation
+
+
 library(tidyverse)
 
 
@@ -10,10 +14,10 @@ all.data <- NULL
 for(year in years){
 	
 	# for running snippets and ignoring the loop:
-	# year <- 2018
+	# year <- 2012
 	
 	# read in data
-	data <- read.table(file=paste(path, "/data/", year, ".csv", sep=""), header=TRUE, sep=",")
+	data <- read.table(file=paste(path, "/raw_data/", year, ".csv", sep=""), header=TRUE, sep=",")
 		
 	print(paste("starting year", year))
 	print(colnames(data))	
@@ -48,7 +52,7 @@ for(year in years){
 	
 	# keep ANC obs and vote / registration totals (by precinct)
 	keepers <- grep(reg, data$contest_name)
-	keepers <- c(keepers, grep("total", lower(data$contest_name)))
+	keepers <- c(keepers, grep("total", tolower(data$contest_name)))
 	data <- data[keepers,]
 	
 	print("dropped non-ANC obs (rows/cols)")
@@ -70,10 +74,9 @@ for(year in years){
 	# I'm seeing observations for ward 2 precinct 129 anc 6D04. weird. is in original data?
 	# yes. test for this! could indicate data issues!
 	
-	
 	# reformat contest name to be just 6B04 e.g.
 	data$contest_name <- regmatches(data$contest_name, regexpr(reg, data$contest_name))
-	
+		
 	# break out to ANC and smd fields (and ward to check the above anomaly)
 	data$anc <- regmatches(data$contest_name, regexpr("[[:alpha:]]", data$contest_name))
 	data$smd <- regmatches(data$contest_name, regexpr("[[:digit:]]{2}$", data$contest_name))
@@ -81,11 +84,13 @@ for(year in years){
 	
 	# some years have whitespace in candidate names
 	data$candidate <- strwrap(data$candidate)
+	# some names have commas, which will not read in properly
+	data$candidate <- str_remove(data$candidate, ",")
 
 
     #### Collapsing / Reshaping
     
-	## Preperatory work
+	## Preparatory work
 	
 	# assert that no precincts cross wards
 	# why? for aggregating totals from precinct to ward to make sense?
@@ -103,6 +108,8 @@ for(year in years){
 	# merge
 	data <- inner_join(data, ward_totals, "ward")
 	
+	# ^^^^ NOTE a couple things are wrong with ward-level data right now and it is dropped at end of script
+
 
     # pause to analyze ward_check
 	ward_test <- data$ward_check == data$ward
@@ -179,8 +186,18 @@ for(year in years){
 # sort for easier sanity checking
 all.data <- all.data[order(all.data$year, all.data$contest_name),]
 
+# sort columns so they actually make sense
+sorted_names <- c("contest_name", "year", "ward", "anc", "smd", "smd_ballots", "smd_anc_votes",
+        "explicit_candidates", "winner", "winner_votes", "write_in_votes")
+# tack on any leftovers on the end so you're not dropping
+sorted_names <- c(sorted_names, setdiff(colnames(all.data), sorted_names))
+all.data <- select(all.data, sorted_names)
+
+# for now, drop ward-level votes and ballots data because it's messed up
+all.data <- select(all.data, -ward_ballots, -ward_anc_votes)
 
 write.table(all.data, file=paste(path, "/data/", "allyears", "_collapsed.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
+write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 
