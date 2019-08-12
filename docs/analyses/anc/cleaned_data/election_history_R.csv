@@ -656,7 +656,7 @@ contest_name,year,ward,anc,smd,smd_ballots,smd_anc_votes,explicit_candidates,win
 2E04,2016,2,E,04,23,5,1,WRITE-IN,5,5,0,18
 2E05,2016,2,E,05,578,497,2,Lisa Palmer,298,8,0,81
 2E06,2016,2,E,06,987,742,1,Jim Wilcox,722,20,0,245
-2E07,2016,2,E,07,1078,823,1,Monica L. Roach√©,803,20,1,254
+2E07,2016,2,E,07,1078,823,1,Monica L. RoachâÂŠ,803,20,1,254
 2E08,2016,2,E,08,337,278,1,Zachary Schroepfer,271,7,0,59
 2F01,2016,2,F,01,1213,853,2,Jason Forman,489,25,1,359
 2F02,2016,2,F,02,1244,948,1,John Guggenmos,918,30,0,296
@@ -737,7 +737,7 @@ contest_name,year,ward,anc,smd,smd_ballots,smd_anc_votes,explicit_candidates,win
 4C09,2016,4,C,09,1073,883,1,Joseph Martin,858,25,0,190
 4C10,2016,4,C,10,1159,973,1,Jonah Goodman,951,22,0,186
 4D01,2016,4,D,01,846,689,1,Nancy E. Roth,672,17,1,156
-4D02,2016,4,D,02,1066,948,1,Ren√©e L. Bowser,929,19,0,118
+4D02,2016,4,D,02,1066,948,1,RenâÂŠe L. Bowser,929,19,0,118
 4D03,2016,4,D,03,1181,1025,2,Lisa Colbert,539,13,1,155
 4D04,2016,4,D,04,930,791,1,David Sheon,772,19,0,139
 4D05,2016,4,D,05,936,791,1,Krystal Branton,769,22,0,145
@@ -855,7 +855,7 @@ contest_name,year,ward,anc,smd,smd_ballots,smd_anc_votes,explicit_candidates,win
 8A01,2016,8,A,01,1171,978,1,Holly Muhammad,938,40,2,191
 8A02,2016,8,A,02,1153,972,1,Barbara J. Clark,950,22,1,180
 8A03,2016,8,A,03,1012,138,1,WRITE-IN,138,138,0,874
-8A04,2016,8,A,04,642,535,1,Troy Dont√© Prestwood,522,13,0,107
+8A04,2016,8,A,04,642,535,1,Troy DontâÂŠ Prestwood,522,13,0,107
 8A05,2016,8,A,05,976,839,2,Travon Hawkins,514,19,0,137
 8A06,2016,8,A,06,1055,943,4,Greta J. Fuller,342,22,2,110
 8A07,2016,8,A,07,1072,905,1,T'Chaka M. Sapp,863,42,0,167
