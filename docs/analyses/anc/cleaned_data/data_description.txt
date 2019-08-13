@@ -6,6 +6,15 @@ SMD - "Single-member district"; subdivision of ANC from which a single ANC commi
 
 
 
+Quick summary:
+election_history_R.csv is just the election datasets reformatted to proper scope
+2018_elections_commissioners.csv is election_history_R.csv restricted to 2018 and merged with data on current commissioners
+election_data_for_anc_map.csv is election_history_R collapsed to ANC-level with a handful of statistics for initial map visualization
+
+current_anc_membership.csv is info Ilya scraped on current (mid 2019) ANC comms
+anc_electoral_history_2012_2018.csv should be roughly equivalent to election_history_R.csv
+
+
 
 election_history_R.csv:
 SMD-level
@@ -54,8 +63,8 @@ produced by map_prep.R
 
 from election_history_R.csv, collapsed to ANC-level from SMD
 
-ward, year, anc -- 
+ward, year, anc -- as above
 num_candidates -- average number of registered candidates
-votes - average number of votes for winning candidates
-vote_norm - average of ration between winner votes and ballots cast (not total ANC votes)
-engagement - 
+votes - average number of votes for winning candidates in ANC
+vote_norm - average of ratio between winner votes and ballots cast (not total ANC votes)
+engagement - average of ratio between total ANC votes and ballots cast
