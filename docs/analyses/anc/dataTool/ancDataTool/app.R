@@ -14,6 +14,12 @@ library(magrittr)
 library(dplyr)
 library(ggplot2)
 
+electionHistoryTable = read_csv('election_history_R.csv')
+electionHistoryTable %<>% 
+  mutate(ward = as.factor(ward),smd = as.factor(smd),anc=as.factor(anc)) %>% 
+  select(year,ward,anc,smd,smd_anc_votes,winner_votes) %>%
+  mutate(winnerPct = winner_votes / smd_anc_votes)
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
    
@@ -24,99 +30,84 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(
         
-        # selectInput("dataSource",
-        #             label="Select Variable",
-        #             choices = c("Total Votes","Winner Votes","Winner Pct")),
-        
-        selectInput("ward",
-                    label="Select a Ward",
-                    choices = c("Ward 1",
-                                "Ward 2",
-                                "Ward 3",
-                                "Ward 4",
-                                "Ward 5",
-                                "Ward 6",
-                                "Ward 7",
-                                "Ward 8")),
-        
-        selectInput("anc",
-                    label="Select an ANC",
-                    choices = c("A","B","C","D","E","F","G")),
-        
-        
-        checkboxGroupInput("smd",h3("SMD"),
-                            choices = list("1" = 1,
-                                           "2" = 2,
-                                           "3" = 3,
-                                           "4" = 4,
-                                           "5" = 5,
-                                           "6" = 6,
-                                           "7" = 7,
-                                           "8" = 8,
-                                           "9" = 9),
-                           selected = 1)
-        
-        
-         
+        uiOutput("select_ward"),
+        uiOutput("select_anc"),
+        uiOutput("select_smd")
       ),
       
       # Show a plot of the generated distribution
       mainPanel(
-        plotOutput("totalPlot"),
-        plotOutput("winnerPlot"),
-        plotOutput("pctPlot")
+        
+        tableOutput("table")
+        # plotOutput("totalPlot"),
+        # plotOutput("winnerPlot"),
+        # plotOutput("pctPlot")
       )
    )
 )
 
 # Define server logic required to draw a histogram
-server <- function(input, output) {
+server <- function(input, output,session) {
   
-  electionHistoryTable = read_csv('election_history_R.csv')
-  electionHistoryTable %<>% 
-    mutate(ward = as.factor(ward),smd = as.factor(smd),anc=as.factor(anc)) %>% 
-    select(year,ward,anc,smd,smd_anc_votes,winner_votes) %>%
-    mutate(winnerPct = winner_votes / smd_anc_votes)
-   
-  wardInput <- reactive({
-    switch(input$ward,
-           "Ward 1" = 1,
-           "Ward 2" = 2,
-           "Ward 3" = 3,
-           "Ward 4" = 4,
-           "Ward 5" = 5,
-           "Ward 6" = 6,
-           "Ward 7" = 7,
-           "Ward 8" = 8)
-  })
-    
   reducedTable <- reactive({
     
     electionHistoryTable %>% 
-      filter(ward==wardInput(),anc==input$anc,smd %in% input$smd)
+      filter(ward==input$wardSelection) %>%
+      filter(anc == input$ancSelection) %>%
+      filter(smd %in% input$smdSelection)
+    
+  })
+  
+  output$select_ward <- renderUI({
+    
+    selectizeInput('wardSelection','Select Ward',choices=c("select" = "",levels(electionHistoryTable$ward)))
   })
   
   
-   output$totalPlot <- renderPlot({
+  output$select_anc <- renderUI({
+    
+    choice_anc <- reactive({
+      electionHistoryTable %>% filter(ward==input$wardSelection) %>% pull(anc) %>% unique() %>% as.character()
+    })
+    selectizeInput('ancSelection','Select ANC',choices=c("select" = "",choice_anc()))
+  })
   
-     reducedTable() %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line() + 
-       geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
-       ggtitle("Total Votes in SMD(s) vs. Time")
-   })
-   
-   output$winnerPlot <- renderPlot({
-     
-     reducedTable() %>% ggplot(aes(x=year,y=winner_votes,color=smd)) + geom_line() + 
-       geom_point() + xlab("Year") + ylab("Winning Votes in SMD") + 
-       ggtitle("Winner Votes in SMD(s) vs. Time")  
-   })
-   
-   output$pctPlot <- renderPlot({
-     
-     reducedTable() %>% ggplot(aes(x=year,y=winnerPct,color=smd)) + geom_line() + 
-       geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
-       ggtitle("Winner Percentage in SMD(s) vs. Time")  
-   })
+  output$select_smd <- renderUI({
+    
+    choice_smd <- reactive({
+      
+      electionHistoryTable %>% filter(ward==input$wardSelection) %>% filter(anc == input$ancSelection) %>% pull(smd) %>% unique() %>% as.character()
+    })
+    checkboxGroupInput("smdSelection",'Select SMD',choices = choice_smd(),selected = 1)
+  })
+
+
+  output$table <- renderTable({ 
+    
+    reducedTable()
+    
+  })  
+  
+   # output$totalPlot <- renderPlot({
+   # 
+   #   reducedTable() %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line() + 
+   #     geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
+   #     ggtitle("Total Votes in SMD(s) vs. Time")
+   # })
+   # 
+   # output$winnerPlot <- renderPlot({
+   #   
+   #   reducedTable() %>% ggplot(aes(x=year,y=winner_votes,color=smd)) + geom_line() + 
+   #     geom_point() + xlab("Year") + ylab("Winning Votes in SMD") + 
+   #     ggtitle("Winner Votes in SMD(s) vs. Time")  
+   # })
+   # 
+   # output$pctPlot <- renderPlot({
+   #   
+   #   reducedTable() %>% ggplot(aes(x=year,y=winnerPct,color=smd)) + geom_line() + 
+   #     geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
+   #     ggtitle("Winner Percentage in SMD(s) vs. Time")  
+   # })
    
    
    

@@ -1,3 +1,4 @@
 *.pyc
 *.scssc
 deploy/sample-env-var.sh
+**/rsconnect
