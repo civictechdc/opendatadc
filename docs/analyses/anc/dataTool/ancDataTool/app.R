@@ -21,29 +21,29 @@ electionHistoryTable %<>%
   mutate(winnerPct = winner_votes / smd_anc_votes)
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(
-   
-   # Application title
-   titlePanel("Historical ANC Data Dashboard"),
-   
-   # Sidebar with a slider input for number of bins 
-   sidebarLayout(
-      sidebarPanel(
+ui <- navbarPage("Historical ANC Data Dashboard",
+                 
+   tabPanel("SMD Plots",
+      sidebarLayout(
+        sidebarPanel(
+          
+          uiOutput("select_ward"),
+          uiOutput("select_anc"),
+          uiOutput("select_smd")
+        ),
         
-        uiOutput("select_ward"),
-        uiOutput("select_anc"),
-        uiOutput("select_smd")
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-        
-        tableOutput("table")
-        # plotOutput("totalPlot"),
-        # plotOutput("winnerPlot"),
-        # plotOutput("pctPlot")
+        # Show a plot of the generated distribution
+        mainPanel(
+          
+          tabsetPanel(type = "tabs",
+                      tabPanel("Total Votes", plotOutput("totalPlot")),
+                      tabPanel("Winner Votes", plotOutput("winnerPlot")),
+                      tabPanel("Percent Votes", plotOutput("pctPlot")),
+                      tabPanel("Data Table", tableOutput("table")))
+        )
       )
-   )
+   ),
+   tabPanel("More To Come")
 )
 
 # Define server logic required to draw a histogram
@@ -88,26 +88,26 @@ server <- function(input, output,session) {
     
   })  
   
-   # output$totalPlot <- renderPlot({
-   # 
-   #   reducedTable() %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line() + 
-   #     geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
-   #     ggtitle("Total Votes in SMD(s) vs. Time")
-   # })
-   # 
-   # output$winnerPlot <- renderPlot({
-   #   
-   #   reducedTable() %>% ggplot(aes(x=year,y=winner_votes,color=smd)) + geom_line() + 
-   #     geom_point() + xlab("Year") + ylab("Winning Votes in SMD") + 
-   #     ggtitle("Winner Votes in SMD(s) vs. Time")  
-   # })
-   # 
-   # output$pctPlot <- renderPlot({
-   #   
-   #   reducedTable() %>% ggplot(aes(x=year,y=winnerPct,color=smd)) + geom_line() + 
-   #     geom_point() + xlab("Year") + ylab("Total Votes in SMD") + 
-   #     ggtitle("Winner Percentage in SMD(s) vs. Time")  
-   # })
+   output$totalPlot <- renderPlot({
+
+     reducedTable() %>% ggplot(aes(x=year,y=smd_anc_votes,color=smd)) + geom_line() +
+       geom_point() + xlab("Year") + ylab("Total Votes in SMD") +
+       ggtitle("Total Votes in SMD(s) vs. Time")
+   })
+
+   output$winnerPlot <- renderPlot({
+
+     reducedTable() %>% ggplot(aes(x=year,y=winner_votes,color=smd)) + geom_line() +
+       geom_point() + xlab("Year") + ylab("Winning Votes in SMD") +
+       ggtitle("Winner Votes in SMD(s) vs. Time")
+   })
+
+   output$pctPlot <- renderPlot({
+
+     reducedTable() %>% ggplot(aes(x=year,y=winnerPct,color=smd)) + geom_line() +
+       geom_point() + xlab("Year") + ylab("Total Votes in SMD") +
+       ggtitle("Winner Percentage in SMD(s) vs. Time")
+   })
    
    
    
