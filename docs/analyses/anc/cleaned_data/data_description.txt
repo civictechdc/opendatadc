@@ -1,0 +1,70 @@
+Terms:
+
+Ward - division of the district, 1-8
+ANC - Advisory Neighborhood Commission. Subdivision of ward identified by letter, e.g. 5D. Around 5-10 commissioners serve on an ANC.
+SMD - "Single-member district"; subdivision of ANC from which a single ANC commissioner is elected
+
+
+
+Quick summary:
+election_history_R.csv is just the election datasets reformatted to proper scope
+2018_elections_commissioners.csv is election_history_R.csv restricted to 2018 and merged with data on current commissioners
+election_data_for_anc_map.csv is election_history_R collapsed to ANC-level with a handful of statistics for initial map visualization
+
+current_anc_membership.csv is info Ilya scraped on current (mid 2019) ANC comms
+anc_electoral_history_2012_2018.csv should be roughly equivalent to election_history_R.csv
+
+
+
+election_history_R.csv:
+SMD-level
+produced by anc_election_cleaner.R
+
+contest_name - ANC identifier
+smd_anc_votes - how many votes were cast in the election for this ANC commissioner
+explicit_candidates - how many official candidates were registered
+ward_ballots - ignore
+over_votes - number of ballots not counted due to multiple votes for ANC commissioner
+under_votes - number of ballots with no vote for ANC comm.
+ward_anc_votes - ignore
+anc
+smd
+ward - these are just contest_name broken out
+year
+winner
+winner_votes
+write_in_votes
+smd_ballots - number of ballots cast that could have included votes for this ANC election, even if they didn't
+
+
+
+
+
+
+2018_elections_commissioners.csv:
+SMD-level
+produced by merge_incumbents.R
+
+The first part of this dataset is just from election_history_R.csv, but years before 2018 are filtered out.
+
+commissioner_name -- name of commissioner who occupied the seat following the 2018 election
+match - do the name of election winner and commissioner match? (subsequence-based similarity over .5)
+vacant - seat is vacant following election
+switcharoo - seat is recorded occupied by a person other than election winner
+substantive_write_in - write-in winner becomes named commissioner
+absent - named election winner with seat subsequently recorded vacant
+empty - write-in winner; seat vacant
+
+
+
+election_data_for_anc_map.csv:
+ANC-level
+produced by map_prep.R
+
+from election_history_R.csv, collapsed to ANC-level from SMD
+
+ward, year, anc -- as above
+num_candidates -- average number of registered candidates
+votes - average number of votes for winning candidates in ANC
+vote_norm - average of ratio between winner votes and ballots cast (not total ANC votes)
+engagement - average of ratio between total ANC votes and ballots cast
