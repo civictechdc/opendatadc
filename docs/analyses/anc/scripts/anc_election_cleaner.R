@@ -4,12 +4,13 @@
 
 
 library(tidyverse)
-
+library(magrittr)
 
 path <- getwd()
 years <- c("2012", "2014", "2016", "2018")
 
 all.data <- NULL
+all.regs <- NULL
 
 for(year in years){
 	
@@ -64,7 +65,10 @@ for(year in years){
 	totals <- data[grep("- TOTAL", data$contest_name),] %>% select(contest_name, precinct, votes)
 	totals <- spread(totals, contest_name, votes)
 	totals <- rename(totals, registered_voters = matches("REGISTER"), ballots = matches("BALLOT"))
-	
+
+
+
+
 	# take totals out of data
 	data <- data[-grep("- TOTAL", data$contest_name),]
 	
@@ -73,10 +77,13 @@ for(year in years){
 	# this mostly seems to work
 	# I'm seeing observations for ward 2 precinct 129 anc 6D04. weird. is in original data?
 	# yes. test for this! could indicate data issues!
+
+
+
 	
 	# reformat contest name to be just 6B04 e.g.
 	data$contest_name <- regmatches(data$contest_name, regexpr(reg, data$contest_name))
-		
+	
 	# break out to ANC and smd fields (and ward to check the above anomaly)
 	data$anc <- regmatches(data$contest_name, regexpr("[[:alpha:]]", data$contest_name))
 	data$smd <- regmatches(data$contest_name, regexpr("[[:digit:]]{2}$", data$contest_name))
@@ -86,6 +93,21 @@ for(year in years){
 	data$candidate <- strwrap(data$candidate)
 	# some names have commas, which will not read in properly
 	data$candidate <- str_remove(data$candidate, ",")
+
+
+
+        # hang onto registration & ballot data to wrangle elsewhere!
+	#   (after fixing ANC names; before reshaping & tossing reg data)
+        year.regs <- data %>% select(precinct, ward, anc, contest_name,
+	                             registered_voters, ballots, year)
+	# collapse away from candidate lvl
+	year.regs %<>% group_by(precinct, ward, anc, year) %>%
+		    summarize(registered_voters = unique(registered_voters),
+		             ballots = unique(ballots))	      
+        if(is.null(all.regs)) all.regs <- year.regs
+        else all.regs <- bind_rows(all.regs, year.regs)
+
+
 
 
     #### Collapsing / Reshaping
@@ -109,7 +131,6 @@ for(year in years){
 	data <- inner_join(data, ward_totals, "ward")
 	
 	# ^^^^ NOTE a couple things are wrong with ward-level data right now and it is dropped at end of script
-
 
     # pause to analyze ward_check
 	ward_test <- data$ward_check == data$ward
@@ -196,8 +217,8 @@ all.data <- select(all.data, sorted_names)
 # for now, drop ward-level votes and ballots data because it's messed up
 all.data <- select(all.data, -ward_ballots, -ward_anc_votes)
 
-write.table(all.data, file=paste(path, "/data/", "allyears", "_collapsed.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
-
 write.table(all.data, file=paste(path, "/cleaned_data/", "election_history_R.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
+# spit out precinct-level registration and ballot counts
+write.table(all.regs, file=paste(path, "/cleaned_data/", "precinct_totals.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
