@@ -10,6 +10,7 @@ Quick summary:
 election_history_R.csv is just the election datasets reformatted to proper scope
 2018_elections_commissioners.csv is election_history_R.csv restricted to 2018 and merged with data on current commissioners
 election_data_for_anc_map.csv is election_history_R collapsed to ANC-level with a handful of statistics for initial map visualization
+anc_turnout.csv is ANC-level turnout estimated from precinct-level registrations and ballots based on geographic overlaps of precincts and ANCs; it's potentially noisy but seems like a good first pass.
 
 current_anc_membership.csv is info Ilya scraped on current (mid 2019) ANC comms
 anc_electoral_history_2012_2018.csv should be roughly equivalent to election_history_R.csv
