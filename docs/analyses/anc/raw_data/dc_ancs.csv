@@ -1,0 +1,297 @@
+smd,last_name,first_name,suffix,address,zip,phone,email,ward,anc
+1A01,Johnson,Marvin,"",1430 Spring Place NW,20010,417-8010,1A01@anc.dc.gov,1,1A
+1A02,Salmeron,Josue,"",1489 Newton Street NW #5,20010,"",1A02@anc.dc.gov,1,1A
+1A03,Gordon,Tom,"",1481 Harvard Street NW,20009,"",1A03@anc.dc.gov,1,1A
+1A04,Goldschmidt,Matthew,"",1349 Parkwood Place NW,20010,"",1A04@anc.dc.gov,1,1A
+1A05,Nguyen,Thu,"",1451 Park Road NW #510,20010,"",1A05@anc.dc.gov,1,1A
+1A06,Flynn,Patrick W.,"",1364 Kenyon Street NW Apt. 1,20010,"",1A06@anc.dc.gov,1,1A
+1A07,Frost,Darwain,"",3617 10th Street NW,20010,"",1A07@anc.dc.gov,1,1A
+1A08,Boese,Kent C.,"",608 Rock Creek Church Road NW,20010,904-8111,1A08@anc.dc.gov,1,1A
+1A09,Holmes,Bobby,"",641 Keefer Place NW,20010,"",1A09@anc.dc.gov,1,1A
+1A10,Brown,Rashida,"",430 Irving Street NW #106,20010,670-2629,1A10@anc.dc.gov,1,1A
+1A11,Wade,Dotti Love,"",1116 Columbia Road NW,20009,"",1A11@anc.dc.gov,1,1A
+1A12,Hundley,Margaret,"",2900 14th Street NW #916,20009,265-8828,1A12@anc.dc.gov,1,1A
+1B01,Footer,Brian,"",1822 4th St NW #4,20001,580-5490,1B01@anc.dc.gov,1,1B
+1B02,Sullivan,Ellen Nedrow,"",1906 9th Street NW,20001,780-4939,1B02@anc.dc.gov,1,1B
+1B03,Muhammad,Sedrick,"",2515 13th Street NW,20009,791-0281,1B03@anc.dc.gov,1,1B
+1B04,Cain,Kevin,"",2125 14th Street NW #714,20009,"",1B04@anc.dc.gov,1,1B
+1B05,Ferreyros,Nicolas,"",2315 15th Street NW,20009,"",1B05@anc.dc.gov,1,1B
+1B06,Forester,Dyana,"",1443 Clifton Street NW Apt. B,20009,"",1B06@anc.dc.gov,1,1B
+1B07,Smith,Jessica Laura,"",2637 16th Street NW #106,20009,627-0724,1B07@anc.dc.gov,1,1B
+1B08,Ranslem,Mark,"",1326 Fairmont Street NW Apt. A,20009,"",1B08@anc.dc.gov,1,1B
+1B09,Turner,James A.,"",1236 Girard Street NW,20009,"",1B09@anc.dc.gov,1,1B
+1B10,Carpenter,Allyson N.,"",2225 4th Street NW #409,20001,"",1B10@anc.dc.gov,1,1B
+1B11,Hudson,Robb,"",919 Florida Avenue NW #204,20001,681-4564,1B11@anc.dc.gov,1,1B
+1B12,Green,John Carlos,"",1927 13th Street NW Apt. A,20009,"",1B12@anc.dc.gov,1,1B
+1C01,Vacant,"","","","","",1C01@anc.dc.gov,1,1C
+1C02,Huezo,Hector,"",2032 Belmont Road NW #106,20009,"",1C02@anc.dc.gov,1,1C
+1C03,Guthrie,Ted,"",1849 Kalorama Road NW Apt. 2,20009,"",1C03@anc.dc.gov,1,1C
+1C04,Mossi,Gabriela,"",2853 Ontario Road NW,20009,"",1C04@anc.dc.gov,1,1C
+1C05,Gambrell,Alan,"",1648 Argonne Place NW,20009,441-7288,1C05@anc.dc.gov,1,1C
+1C06,Simpson,William,"",1721 Euclid Street NW,20009,"",1C06@anc.dc.gov,1,1C
+1C07,Reynolds,Wilson,"",2370 Champlain Street NW # 23,20009,"",1C07@anc.dc.gov,1,1C
+1C08,Buffa,JonMarc P.,"",1674-D Beekman Place NW,20009,"",1C08@anc.dc.gov,1,1C
+1D01,Agbro,Frank,"",1702 Kilbourne Place NW,"","",1D01@anc.dc.gov,1,1D
+1D02,Hoey,Adam,"",1655 Newton Street NW,20010,"",1D02@anc.dc.gov,1,1D
+1D03,McKay,Jack,"",3200 19th Street NW,20010,462-8692,1D03@anc.dc.gov,1,1D
+1D04,Rivas,Rosa,"",3149 Mt. Pleasant Street NW #303,20010,"",1D04@anc.dc.gov,1,1D
+1D05,Griffiths,Arturo,"",1907 Kenyon Street NW,20010,445-0411,1D05@anc.dc.gov,1,1D
+2A01,Kennedy,Patrick,"",532 20th Street NW #312,20006,630-2201,2A01@anc.dc.gov,2,2A
+2A02,Coder,Rebecca,"",2501 M Street NW #721,20037,"",2A02@anc.dc.gov,2,2A
+2A03,Williams,John,"",955 26th Street NW #510,20037,"",2A03@anc.dc.gov,2,2A
+2A04,Smith,William Kennedy,"",600 New Hampshire Avenue NW #610,20037,681-5527,2A04@anc.dc.gov,2,2A
+2A05,Schrefer,Philip J.,"",725 24th Street NW #709,20037,378-8694,2A05@anc.dc.gov,2,2A
+2A06,Harmon,Florence E.,"",1099 22nd Street NW #1011,20037,390-4438,2A06@anc.dc.gov,2,2A
+2A07,Carnes,Jackson,"",510 21st Street NW #405,20006,"",2A07@anc.dc.gov,2,2A
+2A08,Sacco,Peter Edward,"",600 20th Street NW #805,20052,978-882-5013,2A08@anc.dc.gov,2,2A
+2B01,Feldstein,Michael,"",1920 S Street NW #207,20009,"",2B01@anc.dc.gov,2,2B
+2B02,Warwick,Daniel,"",2147 O Street NW #107,20009,360-200-8978,2B02@anc.dc.gov,2,2B
+2B03,Maltz,Stephanie,"",1727 R Street NW #402,20009,"",2B03@anc.dc.gov,2,2B
+2B04,Upright,Michael,"",1619 R Street NW #305,20009,596-8691,2B04@anc.dc.gov,2,2B
+2B05,Nichols,Abigail,"",1325 18th Street NW #803,20036,"",2B05@anc.dc.gov,2,2B
+2B06,Silverstein,Mike,"",1301 20th Street NW #705,20036,833-4440,2B06@anc.dc.gov,2,2B
+2B07,Underhill,Justine,"",1731 Church Street NW,20036,"",2B07@anc.dc.gov,2,2B
+2B08,Mann,Nicole,"",1758 T Street NW Apt. Lower,20036,"",2B08@anc.dc.gov,2,2B
+2B09,Smith,Noah,"",1815 17th Street NW #412,20009,"",2B09@anc.dc.gov,2,2B
+2C01,Tinpe,John,"",777 7th Street NW # 506,20001,230-8538,2C01@anc.dc.gov,2,2C
+2C02,Closter,Harold,"",400 Massachusetts Avenue NW # 1019,20001,"",2C02@anc.dc.gov,2,2C
+2C03,Higgins,Jeffrey J.,"",631 D Street NW #931,20004,"",2C03@anc.dc.gov,2,2C
+2D01,Bender,David R.,"",2126 Connecticut Avenue NW #34,20008,"",2D01@anc.dc.gov,2,2D
+2D02,Goldstein,Ellen L.,"",2129 Florida Avenue NW #501,20008,"",2D02@anc.dc.gov,2,2D
+2E01,Soloman,Ed,"",3525 S Street NW,20007,"",2E01@anc.dc.gov,2,2E
+2E02,Lewis,Ron,"",3400 Reservoir Road NW,20007,"",2E02@anc.dc.gov,2,2E
+2E03,Jones,Jeffrey L.,"",3526 P Street NW,20007,"",2E03@anc.dc.gov,2,2E
+2E04,Clausen,Kendyl,"",424 GT- New South Hall NW,20057,"",2E04@anc.dc.gov,2,2E
+2E05,Starrels,William,"",1045 31st Street NW Apt. 502,20007,703-625-7355,2E05@anc.dc.gov,2,2E
+2E06,Birch,Tom,"",1240 29th Street NW,20007,342-6262,2E06@anc.dc.gov,2,2E
+2E07,Roache,Monica L.,"",2731 P Street NW,20007,"",2E07@anc.dc.gov,2,2E
+2E08,Howard,Reed,"","53 Henle Village, Georgetown University",20007,"",2E08@anc.dc.gov,2,2E
+2F01,Gordon,Katherine,"",1441 Q Street NW,20009,"",2F01@anc.dc.gov,2,2F
+2F02,Berry,Karin,"",1446 Q Street NW,20005,"",2F02@anc.dc.gov,2,2F
+2F03,Tuma,Pepin Andrew,"",1314 Rhode Island Avenue NW #3,20005,"",2F03@anc.dc.gov,2,2F
+2F04,Fanning,John,"",1307 12th Street NW #505,20005,510-1983,2F04@anc.dc.gov,2,2F
+2F05,Lamare,Jim,"",1330 Massachusetts Avenue NW #605,20005,"",2F05@anc.dc.gov,2,2F
+2F06,Bengel,Charlie,"",910 M Street NW #418,20001,"",2F06@anc.dc.gov,2,2F
+2F07,Sylvester,Kevin J.,"",1242 10th Street NW,20005,"",2F07@anc.dc.gov,2,2F
+2F08,Deeley,Kevin,"",1101 L Street NW,"",413-422-0262,2F08@anc.dc.gov,2,2F
+3B01,Mladinov,Ann Lane,"",2819 39th Street NW,20007,"",3B01@anc.dc.gov,3,3B
+3B02,Blumenthal,Jackie,"",3515 W Place NW,20007,"",3B02@anc.dc.gov,3,3B
+3B03,Zenner,Abigail,"",4119 Davis Place NW #201,20007,"",3B03@anc.dc.gov,3,3B
+3B04,Young,Mary C.,"",3040 Idaho Avenue NW #722,20016,895-0268,3B04@anc.dc.gov,3,3B
+3B05,Turmail,Brian G.,"",3818 Beecher Street NW,20007,"",3B05@anc.dc.gov,3,3B
+3C01,Reba,Lee Brian,"",2829 Connecticut Avenue NW,20008,328-2212,3C01@anc.dc.gov,3,3C
+3C02,Bole,Gwendolyn,"",2833 29th Place NW,20008,"",3C02@anc.dc.gov,3,3C
+3C03,Valdez,David,"",2855 29th Street NW,20008,210-802-6238,3C03@anc.dc.gov,3,3C
+3C04,Vacant,"","","","","",3C04@anc.dc.gov,3,3C
+3C05,Siegel,Margaret A.,"",3019 Ordway Street NW,20008,"",3C05@anc.dc.gov,3,3C
+3C06,Roller,Carl,"",3530 39th Street NW #A649,20016,"",3C06@anc.dc.gov,3,3C
+3C07,Silveira,Victor,"",3810 Klingle Place NW,20016,684-6635,3C07@anc.dc.gov,3,3C
+3C08,May,Catherine,"",2800 36th Street NW,20007,965-3332,3C08@anc.dc.gov,3,3C
+3C09,MacWood,Nancy J.,"",3417 Woodley Road NW,20016,966-5333,3C09@anc.dc.gov,3,3C
+3D01,Spencer,William,"",2825 49th Street NW,20016,342-0985,3D01@anc.dc.gov,3,3D
+3D02,Smith,Thomas M.,"",4601 Tilden Street NW,20016,"",3D02@anc.dc.gov,3,3D
+3D03,Wells,Nan S.,"",5057 Overlook Road NW,20016,362-4088,3D03@anc.dc.gov,3,3D
+3D04,Ross,Stuart,"",5445 Potomac Avenue NW,20016,"",3D04@anc.dc.gov,3,3D
+3D05,Gates,Alma H.,"",4911 Ashby Street NW,20016,"",3D05@anc.dc.gov,3,3D
+3D06,Gardner,Stephen,"",4545 W Street NW,20007,"",3D06@anc.dc.gov,3,3D
+3D07,Monge,Regina A.,"",4400 Massachusetts Avenue NW,20016,"",3D07@anc.dc.gov,3,3D
+3D08,Gold,Mike,"",3101 New Mexico Avenue NW #243,20016,"",3D08@anc.dc.gov,3,3D
+3D09,DeWitte,Conrad J.,Jr,1613 44th Street NW,20007,"",3D09@anc.dc.gov,3,3D
+3D10,Lucero,Silvia,"",4323 Massachusetts Avenue NW,20016,"",3D10@anc.dc.gov,3,3D
+3E01,Wallace,Anne,"",4101 Albenarle Street NW,20016,"",3E01@anc.dc.gov,3,3E
+3E02,Hall,Amy B.,"",4606 Fessenden Street NW,20016,"",3E02@anc.dc.gov,3,3E
+3E03,Bender,Jonathan,"",4411 Fessenden Street NW,20016,552-1420,3E03@anc.dc.gov,3,3E
+3E04,Quinn,Tom,"",5322 41st Street NW,20015,497-5097,3E04@anc.dc.gov,3,3E
+3E05,McHugh,Jonathan,"",4524 Van Ness Street NW,20016,"",3E05@anc.dc.gov,3,3E
+3F01,Tope,Adam,"",4319 Reno Road NW,20008,610-428-1412,3F01@anc.dc.gov,3,3F
+3F02,Perry,Karen Lee,"",3003 Van Ness Street NW #W-118,20008,"",3F02@anc.dc.gov,3,3F
+3F03,Ray,Mary Beth,"",4526 29th Street NW,20008,"",3F03@anc.dc.gov,3,3F
+3F04,Gresham,Sally W.,"",3222 Davenport Street NW,20008,"",3F04@anc.dc.gov,3,3F
+3F05,Molod,Andrea,"",5131 Nebraska Avenue NW,20015,"",3F05@anc.dc.gov,3,3F
+3F06,Nugent,Malachy,"",3632 Appleton St NW,20008,"",3F06@anc.dc.gov,3,3F
+3F07,Jakopchek,Patrick,"",3701 Connecticut Avenue NW #816,20008,"",3F07@anc.dc.gov,3,3F
+3G01,Cook,Carolyn A.,"",6521 Barnaby Street NW,20015,"",3G01@anc.dc.gov,3,3G
+3G02,Garfield,Chanda Tuck,"",5649 Moreland Street NW,20015,"",3G02@anc.dc.gov,3,3G
+3G03,Speck,Randy,"",2940 Northampton Street NW,20015,"",3G03@anc.dc.gov,3,3G
+3G04,Maydak,Rebecca,"",5900 Utah Avenue NW,20015,"",3G04@anc.dc.gov,3,3G
+3G05,Shapiro,Peter A.,"",3765 Northampton Street NW,20015,"",3G05@anc.dc.gov,3,3G
+3G06,Bradfield,Dan,"",5509 39th Street NW,20015,"",3G06@anc.dc.gov,3,3G
+3G07,Fromboluti,Chris,"",5312 38th Street NW,20015,"",3G07@anc.dc.gov,3,3G
+4A01,Anderson,Acqunetta,"",7247 15th Place NW,20012,642-6151,4A01@anc.dc.gov,4,4A
+4A02,Toliver,Dwayne M.,"",1326 Hemlock Street NW,20012,"",4A02@anc.dc.gov,4,4A
+4A03,Whatley,Stephen A.,"",1315 Fern Street NW,20012,"",4A03@anc.dc.gov,4,4A
+4A04,Singleton,Patience,"",1316 Tuckerman Street NW,20011,596-9902,4A04@anc.dc.gov,4,4A
+4A05,Worthy,Kimberly A.,"",6101 16th Street NW #909,20011,758-2783,4A05@anc.dc.gov,4,4A
+4A06,Braxton,Karrye Y.,"",1320 Missouri Avenue NW #102,20011,"",4A06@anc.dc.gov,4,4A
+4A07,Wilson,Dave,"",5810 16th Street NW,20011,441-7888,4A07@anc.dc.gov,4,4A
+4A08,Black,Gale B.,"",1761 Crestwood Drive NW,20011,"",4A08@anc.dc.gov,4,4A
+4B01,Carley,Andre R.,"",7405 9th Street NW,20012,406-0417,4B01@anc.dc.gov,4,4B
+4B02,Jones,Frank,III,422 Butternut Street NW #207,20012,"",4B02@anc.dc.gov,4,4B
+4B03,Grant,Fred,"",601 Roxboro Place NW,20011,"",4B03@anc.dc.gov,4,4B
+4B04,Parks,Brenda,"",6001 8th Street NW,20011,291-2557,4B04@anc.dc.gov,4,4B
+4B05,Speaks,Brenda,"",5700 4th Street NW,20011,"",4B05@anc.dc.gov,4,4B
+4B06,Austin,Ronald,"",6120 North Dakota Avenue NW,20011,"",4B06@anc.dc.gov,4,4B
+4B07,Jones,Judi,"",25 Sheridan Street NW,20011,"",4B07@anc.dc.gov,4,4B
+4B08,Vacant,"","","","","",4B08@anc.dc.gov,4,4B
+4B09,Sloan,Douglass,"",313 Nicholson Street NE,20011,"",4B09@anc.dc.gov,4,4B
+4C01,Uqdah,Taalib-Din A.,"",1373 Jefferson Street NW,20011,421-8945,4C01@anc.dc.gov,4,4C
+4C02,Maloney,Joseph,"","1403 Critenden Street NW Washington, 20011","","",4C02@anc.dc.gov,4,4C
+4C03,Standish,Jeff,"",1127 Buchanan Street NW,20011,"",4C03@anc.dc.gov,4,4C
+4C04,Williams,Rickey,Jr,3900 14th Street NW #207,20011,"",4C04@anc.dc.gov,4,4C
+4C05,Teutsch,Zach,"",1323 Shepherd Street NW,20011,"",4C05@anc.dc.gov,4,4C
+4C06,Galloway,Vann-Di,"",3809 13th Street NW,20011,545-8155,4C06@anc.dc.gov,4,4C
+4C07,Hayworth,John-Paul C.,"",4215 8th Street NW #2,20011,"",4C07@anc.dc.gov,4,4C
+4C08,Jones,Timothy A.,"",737 Rock Creek Ch. Rd. NW #110,20010,"",4C08@anc.dc.gov,4,4C
+4C09,Martin,Joseph,"",4230 4th Street NW,20011,"",4C09@anc.dc.gov,4,4C
+4C10,Crowley,Kathleen M.,"",445 Quincy Street NW,20011,"",4C10@anc.dc.gov,4,4C
+4D01,Roth,Nancy E.,"",1104 Jefferson Street NW,20011,"",4D01@anc.dc.gov,4,4D
+4D02,Bowser,Renée L.,"",5322 2nd Street NW,20011,"",4D02@anc.dc.gov,4,4D
+4D03,Colbert,Lisa,"",601 Gallatin Street NW,20001,200-0144,4D03@anc.dc.gov,4,4D
+4D04,Sheon,David,"",4922 9th Street NW,20011,422-6999,4D04@anc.dc.gov,4,4D
+4D05,Branton,Krystal,"",250 Farragut Street NW #106,20011,"",4D05@anc.dc.gov,4,4D
+4D06,Quirk,Bill,"",614 Emerson Street NW,20011,"",4D06@anc.dc.gov,4,4D
+5A01,Wilds,Frank,"",5016 Eastern Avenue NE,20017,450-6396,5A01@anc.dc.gov,5,5A
+5A02,Lewis,Grace J.,"",4945 Sargent Road NE,20017,"",5A02@anc.dc.gov,5,5A
+5A03,Jordan,Adrian T.,"",4618 S. Dakota Avenue NE,20017,"",5A03@anc.dc.gov,5,5A
+5A04,Vacant,"","","","","",5A04@anc.dc.gov,5,5A
+5A05,Edwards,Ronnie,"",122 Michigan Avenue NE # L24,20017,"",5A05@anc.dc.gov,5,5A
+5A06,White,Jasmine N.,"",4409 Clermont Dr. NE #152,20011,"",5A06@anc.dc.gov,5,5A
+5A07,Washington,Sandi,"",32 Buchanan Street NE,20011,"",5A07@anc.dc.gov,5,5A
+5A08,Alston,Angel Sherri,"",4720 7th Street NE,20017,"",5A08@anc.dc.gov,5,5A
+5B01,Hall-Carley,Gayle,"",4031 South Dakota Avenue NE,20018,450-6396,5B01@anc.dc.gov,5,5B
+5B02,Higgins,Ursula,"",1902 Newton Street NE,20018,"",5B02@anc.dc.gov,5,5B
+5B03,Morrison,Michael,"",1843 Monroe Street NE,20018,"",5B03@anc.dc.gov,5,5B
+5B04,Barrios,Joe,"",1236 Hamlin Street NE,20018,"",5B04@anc.dc.gov,5,5B
+5B05,Feeley,John J.,Jr,1009 Sigsbee Place NE,20017,"",5B05@anc.dc.gov,5,5B
+5C01,Brevard,Gail,"",2848 Myrtle Avenue NE,20018,"",5C01@anc.dc.gov,5,5C
+5C02,Deleon,Walter,"",2725 28th Street NE,20018,907-9279,5C02@anc.dc.gov,5,5C
+5C03,Looper,Robert,III,3823 Comm J. Barney Dr. NE,20018,491-5958,5C03@anc.dc.gov,5,5C
+5C04,Manning,Jacqueline,"",2116 R Street NE,20002,"",5C04@anc.dc.gov,5,5C
+5C05,James,Regina,"",1363 Adams Street NE,20018,526-1681,5C05@anc.dc.gov,5,5C
+5C06,Smith,Monique C.,"",1714 Montana Avenue NE,20018,301-275-5987,5C06@anc.dc.gov,5,5C
+5C07,Treadway,Nolan,"",2222 Lawrence Street NE,20018,"",5C07@anc.dc.gov,5,5C
+5D01,Lewis,Peta-Gay S.,"",1868 Corcoran Street NE,20002,"",5D01@anc.dc.gov,5,5D
+5D02,Shropshire,Keisha L.,"",1274 Holbrook Terrace NE,20002,404-245-6722,5D02@anc.dc.gov,5,5D
+5D03,Roberts,Adam,"",1832 L Street NE,20002,"",5D03@anc.dc.gov,5,5D
+5D04,Blacknell,Bernice S,"",2114 I Street NE #3,20002,"",5D04@anc.dc.gov,5,5D
+5D05,Henderson,Kathy,"",1807 L Street NE,20002,"",5D05@anc.dc.gov,5,5D
+5D06,Buggs,H. Yvonne,"",1113 Montello Avenue NE,20002,"",5D06@anc.dc.gov,5,5D
+5D07,Lee,Clarence,"",1519 Trinidad Avenue NE,20002,"",5D07@anc.dc.gov,5,5D
+5E01,Smith-Steiner,Debbie,"",2826 6th Street NE,20017,"",5E01@anc.dc.gov,5,5E
+5E02,Davis,Christy 'Love',"",611 Edgewood Terrace NE #410,20017,"",5E02@anc.dc.gov,5,5E
+5E03,Lewis,Renee T.,"",302 T Street NE,20002,"",5E03@anc.dc.gov,5,5E
+5E04,Pinkney,Sylvia M.,"",34 R Street NE,20002,"",5E04@anc.dc.gov,5,5E
+5E05,Thomas,Bradley Ashton,"",107 P Street NW,20001,"",5E05@anc.dc.gov,5,5E
+5E06,Quinn,Teri Janine,"",1708 2nd Street NW,20001,214-908-1913,5E06@anc.dc.gov,5,5E
+5E07,Holliday,Bertha G.,"",49 T Street NW,20001,491-3996,5E07@anc.dc.gov,5,5E
+5E08,Pearl,Austin L.,"",2024 North Capitol Street,20002,"",5E08@anc.dc.gov,5,5E
+5E09,Barnes,Dianne,"",41 Adams Street NW,20001,"",5E09@anc.dc.gov,5,5E
+5E10,Hobaugh,Sally,"",213 Ascot Place NE,20002,"",5E10@anc.dc.gov,5,5E
+6A01,Mahmud,J. Omar,"",718 10th Street NE,20002,"",6A01@anc.dc.gov,6,6A
+6A02,Toomajian,Phil,"",631 10th Street NE,20002,"",6A02@anc.dc.gov,6,6A
+6A03,Ward,Chris,"",141 11th Street NE,20002,"",6A03@anc.dc.gov,6,6A
+6A04,Levy,Matt,"",231 14th Street NE,20002,505-9655,6A04@anc.dc.gov,6,6A
+6A05,Malone,Patrick M.,"",1323 Corbin Place NE,20002,"",6A05@anc.dc.gov,6,6A
+6A06,Zimny,Stephanie,"",1368 Emerald Street NE,20002,"",6A06@anc.dc.gov,6,6A
+6A07,Phillips-Gilbert,Sondra,"",1744 E Street NE,20002,397-7228,6A07@anc.dc.gov,6,6A
+6A08,Ward,Calvin,"",436 19th Street NE,20002,"",6A08@anc.dc.gov,6,6A
+6B01,Samolyk,Jennifer E.,"",407 2nd Street SE,20003,"",6B01@anc.dc.gov,6,6B
+6B02,Hoskins,K. Diane,"",649 C Street SE,20003,"",6B02@anc.dc.gov,6,6B
+6B03,Loots,James M.,"",634 G Street SE,20003,"",6B03@anc.dc.gov,6,6B
+6B04,Oldenburg,Kirsten,"",423 12th Street SE,20003,546-8542,6B04@anc.dc.gov,6,6B
+6B05,Hagedorn,Steve,"",246 9th Street SE,20003,"",6B05@anc.dc.gov,6,6B
+6B06,Burger,Nick,"",1336 E Street SE,20003,"",6B06@anc.dc.gov,6,6B
+6B07,Chao,Daniel,"",1329 K Street SE,20003,"",6B07@anc.dc.gov,6,6B
+6B08,Jayaraman,Chander,"",1436 Independence Avenue SE,20003,"",6B08@anc.dc.gov,6,6B
+6B09,Flahaven,Brian,"",1628 Potomac Avenue SE,20003,"",6B09@anc.dc.gov,6,6B
+6B10,Krepp,K. Denise Rucker,"",1837 A Street SE,20003,"",6B10@anc.dc.gov,6,6B
+6C01,Schiffman,Daniele Megan,"",19 7th Street NE,20002,"",6C01@anc.dc.gov,6,6C
+6C02,Wirt,Karen,"",234 E Street NE,20002,547-7168,6C02@anc.dc.gov,6,6C
+6C03,Price,Scott,"",517 E Street NE,20002,577-6261,6C03@anc.dc.gov,6,6C
+6C04,Eckenwiler,Mark,"",312 E Street NE,20002,"",6C04@anc.dc.gov,6,6C
+6C05,Miller,Chris,"",707 6th Street NE,20002,"",6C05@anc.dc.gov,6,6C
+6C06,Goodman,Tony T.,"",1152 4th Street NE,20002,"",6C06@anc.dc.gov,6,6C
+6D01,Lightman,Marjorie,"",1100 6th Street SW,20024,"",6D01@anc.dc.gov,6,6D
+6D02,Cloyd,Stacy Braverman,"",771 Delaware Avenue SW,20024,"",6D02@anc.dc.gov,6,6D
+6D03,Carroll,Rachel Reilly,"",800 4th Street SW,20024,"",6D03@anc.dc.gov,6,6D
+6D04,Litsky,Andy,"",423 N Street SW,20024,"",6D04@anc.dc.gov,6,6D
+6D05,Moffatt,Roger,"",1301 Delaware Avenue SW,20024,"",6D05@anc.dc.gov,6,6D
+6D06,Hamilton,Rhonda N.,"",44 O Street SW,20024,"",6D06@anc.dc.gov,6,6D
+6D07,Fascett,Meredith,"",909 4tt Street SE,20024,"",6D07@anc.dc.gov,6,6D
+6E01,Padro,"Alexander M. ""Alex""","",1519 8th Street NW,20001,518-3794,6E01@anc.dc.gov,6,6E
+6E02,Chapple,Kevin L.,"",438 S Steet NW,20001,449-5072,6E02@anc.dc.gov,6,6E
+6E03,Wiggins,Frank S.,"",1340 5th Street NW,20001,"",6E03@anc.dc.gov,6,6E
+6E04,Nigro,Rachelle P.,"",437 New York Avenue NW,20001,"",6E04@anc.dc.gov,6,6E
+6E05,Maceda,Marge,"",475 K Street NW #802,20001,360-7404,6E05@anc.dc.gov,6,6E
+6E06,Barnes,Antonio,"",54 M Street NW,20001,200-1171,6E06@anc.dc.gov,6,6E
+6E07,Judd,Alfreda S.,"",117 Pierce Street NW,20001,"",6E07@anc.dc.gov,6,6E
+7B01,Howard-Chittams,Patricia,"",2936 M Street SE,20019,"",7B01@anc.dc.gov,7,7B
+7B02,Brown,Tiffany L.,"",2918 Akron Place SE,20020,"",7B02@anc.dc.gov,7,7B
+7B03,Butler,Gary,"",2424 L'Enfant Square SE,20020,"",7B03@anc.dc.gov,7,7B
+7B04,Hammond,Phillip J.,"",2132 Branch Avenue SE,20020,"",7B04@anc.dc.gov,7,7B
+7B05,Marlin,Robin Hammond,"",3200 S Street SE,20020,"",7B05@anc.dc.gov,7,7B
+7B06,Anderson,Donovan,"",2516 34th Street SE,20020,575-3321,7B06@anc.dc.gov,7,7B
+7B07,Turner,Marcus,"",3956 Pennsylvania Avenue SE #104,20020,"",7B07@anc.dc.gov,7,7B
+7C01,Malloy,Patricia A.,"",501 50th Place NE,20019,"",7C01@anc.dc.gov,7,7C
+7C02,Stewart,Greg,"","5364 Ames Street ,NE",20019,505-1167,7C02@anc.dc.gov,7,7C
+7C03,Woods,Catherine A.,"",4904 Fitch Place NE,20019,398-5307,7C03@anc.dc.gov,7,7C
+7C04,Garcia,Walter J.,II,4605 Hunt Place NE,20019,"",7C04@anc.dc.gov,7,7C
+7C05,Gaffney,Mary L.,"",328 62nd Street NE,20019,"",7C05@anc.dc.gov,7,7C
+7C06,Cosby,Jennifer,"",4651 Nannie Helen Burroughs Avenue NE,20019,"",7C06@anc.dc.gov,7,7C
+7C07,Holmes,Antawan,"",4805 Meade Street NE,20019,556-0962,7C07@anc.dc.gov,7,7C
+7D01,Coomber,Bob,"",425 21st Street NE,20019,"",7D01@anc.dc.gov,7,7D
+7D02,Hasan,Siraaj M.,"",1104 42nd Street NE,2001,"",7D02@anc.dc.gov,7,7D
+7D03,Douglas,Dorothy,"",4401 Minnesota Avenue NE,20019,"",7D03@anc.dc.gov,7,7D
+7D04,McKay,Claude B.,"",137 Anacostia Avenue NE,20019,813-0137,7D04@anc.dc.gov,7,7D
+7D05,Hazel,Janis D.,"",34 46th Place NE,20019,"",7D05@anc.dc.gov,7,7D
+7D06,Muhammad,Sherice A.,"",4409 Jay Street NE,20019,"",7D06@anc.dc.gov,7,7D
+7D07,Lini,Justin A.,"",721 Anacostia Avenue NE,20019,"",7D07@anc.dc.gov,7,7D
+7E01,Vacant,"","","","","",7E01@anc.dc.gov,7,7E
+7E02,Green,Linda S.,"",4239 Massachusetts Avenue SE,20019,"",7E02@anc.dc.gov,7,7E
+7E03,Hamlett,Rosa A.,"","503 53rd Street ,SE",20019,"",7E03@anc.dc.gov,7,7E
+7E04,Smith,Myron,"",4633 East Capitol Street SE,20019,"",7E04@anc.dc.gov,7,7E
+7E05,Bent,Rochelle AC,"",4940 A Street SE #305,20019,573-7798,7E05@anc.dc.gov,7,7E
+7E06,Nightingale,Maxine,"",431 54th Street SE,20019,"",7E06@anc.dc.gov,7,7E
+7E07,Holmes,Linda,"",5890 Southern Avenue SE,20019,"",7E07@anc.dc.gov,7,7E
+7F01,Rhodes,Edward,"",3909 Blaine Street NE,20019,"",7F01@anc.dc.gov,7,7F
+7F02,Thompson,Eboni-Rose,"",4562 Texas Avenue SE,20019,"",7F02@anc.dc.gov,7,7F
+7F03,Carr,Sheila Carson,"","515 46th Street ,SE",20019,"",7F03@anc.dc.gov,7,7F
+7F04,Armstrong,Yolanda,"",304 Anacostia Road SE #301,20019,"",7F04@anc.dc.gov,7,7F
+7F05,Settles,Karen,"",234 37th Street SE,20019,"",7F05@anc.dc.gov,7,7F
+7F06,Travers,Elizabeth H.,"",3444 Croffut Place SE,20019,"",7F06@anc.dc.gov,7,7F
+7F07,Vacant,"","","","","",7F07@anc.dc.gov,7,7F
+8A01,Muhammad,Holly,"",1936 Naylor Road SE #102,20020,907-5990,8A01@anc.dc.gov,8,8A
+8A02,Clark,Barbara J.,"",1620 Ridge Place SE,20020,"",8A02@anc.dc.gov,8,8A
+8A03,Simms,Cynthia W.,"",2300 Good Hope Road SE #1012,20020,821-3043,8A03@anc.dc.gov,8,8A
+8A04,Prestwood,Troy Donte,"",2317 16th Street SE Unit 101,20020,"",8A04@anc.dc.gov,8,8A
+8A05,Wilson,Charles E.,"",1643 U Street SE,20020,"",8A05@anc.dc.gov,8,8A
+8A06,Fletcher,Tina L.,"",1340 Talbert Ct. SE #A,20020,"",8A06@anc.dc.gov,8,8A
+8A07,Williams,Natalie,"",2619 Douglass Place SE #403,20020,"",8A07@anc.dc.gov,8,8A
+8B01,Watson,Khadijah,"",2437 Wagner Street SE,20020,610-4077,8B01@anc.dc.gov,8,8B
+8B02,Trantham,Paul,"",2345 Skyland Place SE #826,20030,739-1967,8B02@anc.dc.gov,8,8B
+8B03,Vaughan,Kevin,"",2472 Alabama Avenue SE #A104,20020,"",8B03@anc.dc.gov,8,8B
+8B04,Green,Anthony Lorenzo,"",1615 Morris Road SE #104,20020,709-8091,8B04@anc.dc.gov,8,8B
+8B05,Scippio,Betty,"",2740 Knox Terrace SE,20020,"",8B05@anc.dc.gov,8,8B
+8B06,Vacant,"","","","","",8B06@anc.dc.gov,8,8B
+8B07,Patterson,Jacque D.,"",3521 21st Street SE,20020,"",8B07@anc.dc.gov,8,8B
+8C01,McCoy,Jeffrey,"",3361 Brothers Place SE,20032,"",8C01@anc.dc.gov,8,8C
+8C02,Stith,Teresa A.,"",2647 Martin Luther King Avenue SE #102,20020,"",8C02@anc.dc.gov,8,8C
+8C03,Cuthbert,Mary,"",3325 Martin Luther King Ave SE #12,20032,246-9410,8C03@anc.dc.gov,8,8C
+8C04,Batchelor,Markus,"",3309 4th Street SE #C,20032,"",8C04@anc.dc.gov,8,8C
+8C05,Shields,Brenda E.,"",P.O. Box 6983,20032,"",8C05@anc.dc.gov,8,8C
+8C06,Edwards-Hines,Rhonda L.,"",1142 Sumner Road SE,20029,"",8C06@anc.dc.gov,8,8C
+8C07,Lindsay,Charles L.,"",3324 Oxon Run Road SE,20030,"",8C07@anc.dc.gov,8,8C
+8D01,Carmon,Patricia,"",816 Southern Avenue SE #204,20032,"",8D01@anc.dc.gov,8,8D
+8D02,Henderson,Olivia L.,"",4612 6th Street SE,20032,"",8D02@anc.dc.gov,8,8D
+8D03,Jordan,Absalom,"",4335 4th Street SE,20032,"",8D03@anc.dc.gov,8,8D
+8D04,Diop,Monique T.,"",4660 MLK Avenue SW #C815,20032,"",8D04@anc.dc.gov,8,8D
+8D05,Ruffin,Thomas,Jr,153 Galveston Place SW #4,20032,"",8D05@anc.dc.gov,8,8D
+8D06,Vacant,"","","","","",8D06@anc.dc.gov,8,8D
+8D07,Jones,Theresa H.,"",4020 1st Place SW,20032,"",8D07@anc.dc.gov,8,8D
+8E01,Lee,Marvin S.,"",3261 Stanton Road SE,20032,"",8E01@anc.dc.gov,8,8E
+8E02,Muhammad,Anthony,"",P.O. Box 73878,20056,"",8E02@anc.dc.gov,8,8E
+8E03,Dailey,Anthony Jamaal,"",1920 Savannah StreetSE #204,20032,"",8E03@anc.dc.gov,8,8E
+8E04,McBroom,Shekita,"",1329 Savannah StreetSE #7,20032,"",8E04@anc.dc.gov,8,8E
+8E05,Hawthorne,Christopher L.,"",1922 Valley Terrace SE,20032,"",8E05@anc.dc.gov,8,8E
+8E06,Armstead,Karlene,"",559 Foxhall Place SE,20032,"",8E06@anc.dc.gov,8,8E
+8E07,Slaughter,Stephen A.,"",855 Barnaby Street SE,20032,"",8E07@anc.dc.gov,8,8E
