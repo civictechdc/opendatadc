@@ -4,10 +4,15 @@
 
 library(tidyverse)
 
-path <- getwd()
+#path <- getwd()
+wd <- unlist(strsplit(getwd(), "/"))
+wd <- wd[length(wd)]
+prefix <- ifelse(wd=="scripts", "../", "")
+
 
 # this doesn't need to be only 2018, could grab the 4-year dataset instead
-data <- read.csv(paste(path, "/cleaned_data/2018_elections_commissioners.csv", sep=""), sep=",", header=TRUE)
+data <- read.csv(paste(prefix, "cleaned_data/2018_ancElection_commissioners_contest.csv", sep=""),
+                 sep=",", header=TRUE)
 
 check <- data %>% group_by(year) %>% tally()
 print(check)
@@ -25,6 +30,8 @@ sum <- data %>% group_by(ward, year, anc) %>% summarize(num_candidates = mean(ex
 sum %>% print(n=nrow(.))
 
 
-write.table(sum, file=paste(path, "/cleaned_data/", "election_data_for_anc_map.csv", sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
+write.table(sum,
+            file=paste(prefix, "cleaned_data/2018_ancElection_anc.csv", sep=""),
+            append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 

@@ -6,10 +6,14 @@ library(lwgeom)
 library(magrittr)
 # for some reason we need to get magrittr explicitly to get fancy pipes
 
-path <- getwd()
+#path <- getwd()
+wd <- unlist(strsplit(getwd(), "/"))
+wd <- wd[length(wd)]
+prefix <- ifelse(wd=="scripts", "../", "")
+
 
 # read in data on voter registrations and ballots cast by precinct/anc/year
-regs <- read.csv(paste(path, "/cleaned_data/precinct_totals.csv", sep=""),
+regs <- read.csv(paste(prefix, "cleaned_data/2012_2018_ballots_precinct.csv", sep=""),
          header=TRUE, sep=",")
 
 print(as_tibble(regs[order(regs$precinct),]))
@@ -74,8 +78,8 @@ cat("\n\n\n")
 # or we could give them weighted averages based on GIS data
 
 # read in shapefiles
-precinct_shapes <- st_read(paste(path, "/raw_data/precinct_shapes_2012/Voting_Precinct__2012.shp", sep=""))
-anc_shapes <- st_read(paste(path, "/raw_data/anc_2013/Advisory_Neighborhood_Commissions_from_2013.shp", sep=""))
+precinct_shapes <- st_read(paste(prefix, "raw_data/precinct_shapes_2012/Voting_Precinct__2012.shp", sep=""))
+anc_shapes <- st_read(paste(prefix, "raw_data/anc_2013/Advisory_Neighborhood_Commissions_from_2013.shp", sep=""))
 
 #print(anc_shapes)
 
@@ -266,7 +270,7 @@ reg.fixed %<>% mutate(turnout = ballots / voters)
 
 print(reg.fixed)
 
-write.table(reg.fixed, file=paste(path, "/cleaned_data/anc_turnout.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
+write.table(reg.fixed, file=paste(prefix, "cleaned_data/2012_2018_imputedTurnout_anc.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
 
 
 
@@ -281,5 +285,5 @@ reg.fixed.drop <- collapsed %>% filter(!duplicitous) %>%
 
 reg.fixed.drop %<>% mutate(turnout = ballots / voters)
 
-write.table(reg.fixed.drop, file=paste(path, "/cleaned_data/anc_turnout_drop.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
+#write.table(reg.fixed.drop, file=paste(prefix, "cleaned_data/anc_turnout_drop.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
 

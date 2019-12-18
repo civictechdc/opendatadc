@@ -1,10 +1,14 @@
 
-#`---
-#`title: "Collapsing ANC Election Data to Contest Level"
-#`output: html_document
-#`---
+#' ---
+#' title: "Collapsing ANC Election Data to Contest Level"
+#' output: html_document
+#' ---
 
-#+ echo=FALSE
+
+#' [Reformat and collate years]
+
+#+ setup, warning=FALSE, message=FALSE, echo=FALSE, results='hide'
+knitr::opts_chunk$set(echo=FALSE, results='hide')
 
 # Cleaning DC election data from 2012-2018
 # collapses and reshapes data such that each SMD election is an observation
@@ -141,7 +145,6 @@ for(year in years){
 
 }
 
-
 ### Export I
 
 # spit out precinct-level registration and ballot counts
@@ -159,12 +162,14 @@ data <- all.data
 
 ## Preparatory work
 
-#` ### Collapsing
+#' ### Collapsing
+#+ collapse
 
 # assert that no precincts cross wards
 # why? for aggregating totals from precinct to ward to make sense?
 prec_ward <- data %>% group_by(precinct) %>% summarize(x = var(ward))
 stopifnot(identical(unique(prec_ward$x), 0))
+
 
 # before collapsing away precincts, we need to aggregate up precinct-level vote/ballot totals
 #   because I don't think precincts line up neatly with SMDs
@@ -179,34 +184,90 @@ ward_totals <- ward_totals %>% group_by(ward, year) %>%
 # drop from election data
 data <- select(data, -ballots, -registered_voters)
 # merge
-data <- inner_join(data, ward_totals, c("ward", "year"))
+#data <- inner_join(data, ward_totals, c("ward", "year"))
 
-# ^^^^ NOTE a couple things are wrong with ward-level data right now and it is dropped at end of script
+# ^^^^ NOTE a couple things are wrong with ward-level data right now so we don't merge it in
 
 # pause to analyze ward_check
-ward_test <- data$ward_check == data$ward
-print("How many SMDs are recorded as a different ward?")
-print(summary(!ward_test))
+#ward_test <- data$ward_check == data$ward
+ward_test <- data %>% filter(ward_check != ward)
 
+
+
+#' How many SMDs are recorded as crossing wards?
+
+#+ smd_ward, echo=TRUE, results='show'
+
+head(ward_test)
+unique(ward_test$contest_name)
+
+#' for now, don't drop wonky guys. how should we treat this?  
+#' is it all ANC... 3G, which is partly in ward 4?  
+#' indeed, we see ANC 3G SMDs 1-4 are in ward 4, which agrees with maps  
+#' also seeing 6D04... which is accurate but ignorable -- looks like it includes a section of hain's point that's in ward 2.  
+
+#+ echo=TRUE, results='show'
+
+group_by(ward_test, contest_name, year) %>% summarize(votes = sum(votes))
+
+#' this is seeing the vacuous part of 6D04, cool
+#+
+#' #### Where will it trip us up to have ward not constant w/in ANC?
+#' - not in this file, I think?
+#' - probably when we collapse down to ANC-level later
+#' - ward is still constant w/in contest  
+#' so: let's delete 6D04 x ward 2  
+#' note you will have to fix election_anc.R
+
+#+ echo=TRUE, results='show'
+
+data %<>% filter(!(contest_name=="6D04" & ward==2))
+
+
+#+
+
+# old cleaning code when we fixed anc 3G vvvvvvvvvvvvv
 # delete anomalous ward data (SMDs crossing wards) for collapsing (defaulting to ANC identifier)
 #   because we want ward to be constant within SMD
 # first, take out ward-lvl data for affected obs
-data$ward_ballots[!ward_test] <- NA
-data$ward_anc_votes[!ward_test] <- NA
+#data$ward_ballots[!ward_test] <- NA
+#data$ward_anc_votes[!ward_test] <- NA
 # then coerce ward to fit with ANC
-data$ward <- data$ward_check
-data <- select(data, -ward_check)
+#data$ward <- data$ward_check
+#data <- select(data, -ward_check)
+#					^^^^^^^^^^^^^^
 
+#' check 3G03 before collapse
 
+#+ echo=TRUE, results='show'
+
+data %>% filter(contest_name=="3G03") %>% head(n=10)
+
+#' shucks, ok 3G03 is legitimately split across wards  
+#' looking at the 2013 map it is mostly in ward 4  
+#' so let's set it to ward 4
+
+#+ echo=TRUE, results='show'
+
+data %<>% mutate(ward=ifelse(contest_name=="3G03", '4', ward))
+data %>% filter(contest_name=="3G03") %>% head(n=10)
+
+#+
 ## Collapse #1 (candidate)
 
 # propogate up NAs in ballots using max(), we don't need that data at each ANC
 data.cand <- data %>% group_by(contest_name, candidate, year) %>%
                  summarize(votes = sum(votes),
                            anc=unique(anc), ward=unique(ward), 
-                           ward_ballots=max(ward_ballots), ward_anc_votes=max(ward_anc_votes),
+                           #ward_ballots=max(ward_ballots), ward_anc_votes=max(ward_anc_votes),
                            smd=unique(smd))
 
+# finding which SMD is split across wards...
+#+ eval=FALSE
+data.cand %>% filter(nchar(ward) > 1) %T>% head(n=20)
+# OK, 3G03 is the culprit. look into it above?
+
+#+
 
 # Deal with over/under votes, which are entered as candidates in 2014-18
 # Filter, reshape, & merge so we have over/under as variables
@@ -237,6 +298,14 @@ data.cand <- left_join(data.cand, over.under, by=c("contest_name", "year"))
 
 
 
+#' ### Peek at Candidate-Level Data
+
+#+ cand_lvl, echo=TRUE, results='show'
+
+glimpse(data.cand)
+summary(data.cand)
+
+#+ tidy
 
 
 
@@ -251,14 +320,11 @@ sorted_names <- c("contest_name", "year", "ward", "anc", "smd")
 sorted_names <- c(sorted_names, setdiff(colnames(data.cand), sorted_names))
 data.cand %<>% select(sorted_names)
 
-# for now, drop ward-level votes and ballots data because it's messed up
-data.cand %<>% select(-ward_ballots, -ward_anc_votes)
-
 
 ### Export II
 
 write.table(data.cand,
-            file=paste(prefix, "cleaned_data/2012_2018_election_candidate.csv",
+            file=paste(prefix, "cleaned_data/2012_2018_ancElection_candidate.csv",
                        sep=""),
             append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
@@ -281,6 +347,13 @@ data.cont <- data.cand %>% group_by(contest_name, year) %>%
 data.cont %<>% mutate(smd_ballots = smd_anc_votes + over_votes + under_votes)
 
 
+#' ### Peek at contest-level data
+#+ contest_level, echo=TRUE, results='show'
+
+glimpse(data.cont)
+summary(data.cont)
+
+#+
 
 ### Export III
 
@@ -292,7 +365,7 @@ data.cont %<>% select(sorted_names)
 
 
 write.table(data.cont,
-            file=paste(prefix, "cleaned_data/2012_2018_election_contest.csv",
+            file=paste(prefix, "cleaned_data/2012_2018_ancElection_contest.csv",
                        sep=""), append=FALSE, quote=FALSE, sep=",", row.names=FALSE,
             col.names=TRUE)
 
