@@ -1,0 +1,145 @@
+---
+title: "Data Description"
+output: html_document
+---
+
+```{r setup, warning=FALSE, message=FALSE, echo=FALSE, results='hide'}
+
+library(tidyverse)
+
+# draw in all datas
+
+
+# election_cand
+
+# imputed turnout
+
+# ballot_precinct
+
+# election_anc
+
+# election_comms
+
+
+f <- function(filepath){
+    print(filepath)
+    data = read.csv(filepath, sep=",", header=TRUE)
+    head(data)
+}
+
+
+
+```
+
+#### Terms:
+
+Ward - division of the district, 1-8
+
+ANC - Advisory Neighborhood Commission. Subdivision of ward identified by letter, e.g. 5D. Around 5-10 commissioners serve on an ANC.
+
+SMD - "Single-member district"; subdivision of ANC from which a single ANC commissioner is elected
+
+
+#### Format for cleaned_data filenames:
+
+<year(s)>\_\<content>\_\<aggregation level>.csv
+
+e.g.
+
+2018_ancElection_commissioners_contest.csv is data from 2018 comprising both ANC Elections and subsequently incumbent commissioners, aggregated at the contest level
+
+
+
+
+
+
+
+### 2012-2018 Election, contest-level
+
+
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2012_2018_ancElection_contest.csv")
+
+```
+- contest_name - ANC identifier
+- smd_anc_votes - how many votes were cast in the election for this ANC commissioner
+- explicit_candidates - how many official candidates were registered
+- ward_ballots - ignore
+- over_votes - number of ballots not counted due to multiple votes for ANC commissioner
+- under_votes - number of ballots with no vote for ANC comm.
+- ward_anc_votes - ignore
+- anc
+- smd
+- ward - these are just contest_name broken out
+- year
+- winner
+- winner_votes
+- write_in_votes
+- smd_ballots - number of ballots cast that could have included votes for this ANC election, even if they didnt
+
+
+
+### 2012-2018 Elections, candidate-level
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2012_2018_ancElection_candidate.csv")
+
+```
+
+### 2012-2018 imputed turnout, ANC-level
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2012_2018_imputedTurnout_anc.csv")
+
+```
+
+### 2012-2018 ballot totals, precinct-level
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2012_2018_ballots_precinct.csv")
+
+```
+
+### 2018 Elections, ANC-level
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2018_ancElection_anc.csv")
+
+```
+I think this should be revised to include all years, since I dont think it draws on incumbent data only available for 2018
+
+- ward, year, anc -- as above
+- num_candidates -- average number of registered candidates
+- votes - average number of votes for winning candidates in ANC
+- vote_norm - average of ratio between winner votes and ballots cast (not total ANC votes)
+- engagement - average of ratio between total ANC votes and ballots cast
+
+
+
+### 2018 Elections and Incumbent Commissioners, contest-level
+
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2018_ancElection_commissioners_contest.csv")
+
+```
+
+produced by merge_incumbents.R
+
+The first part of this dataset is just from 2012_2018_ancElection_contest.csv, but years before 2018 are filtered out.
+
+- commissioner_name -- name of commissioner who occupied the seat following the 2018 election
+- match - do the name of election winner and commissioner match? (subsequence-based similarity over .5)
+- vacant - seat is vacant following election
+- switcharoo - seat is recorded occupied by a person other than election winner
+- substantive_write_in - write-in winner becomes named commissioner
+- absent - named election winner with seat subsequently recorded vacant
+- empty - write-in winner; seat vacant
+

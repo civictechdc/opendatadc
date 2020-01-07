@@ -9,7 +9,11 @@ visualization/election_contest.html: scripts/election_contest.R raw_data
 maps/anc-mapping/anc_map.html: cleaned_data/2018_ancElection_anc.csv cleaned_data/2012_2018_imputedTurnout_anc.csv maps/anc-mapping/exploration.ipynb
 	jupyter nbconvert --to notebook --inplace --execute maps/anc-mapping/exploration.ipynb
 
+data_description.html: scripts/data_description.Rmd
+	Rscript -e "library(rmarkdown); render('scripts/data_description.Rmd', output_dir='.')"
 
+visualization/impute_turnout.html: scripts/impute_turnout.R cleaned_data/2012_2018_ballots_precinct.csv
+	Rscript -e "library(rmarkdown); render(knitr::spin('scripts/impute_turnout.R', format='Rmd', knit=FALSE), output_dir='visualization')"
 
 # Data processing
 process: cleaned_data/2018_ancElection_anc.csv cleaned_data/2018_ancElection_commissioners_contest.csv cleaned_data/2012_2018_imputedTurnout_anc.csv cleaned_data/2012_2018_ancElection_candidate.csv
