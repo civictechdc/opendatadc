@@ -11,7 +11,7 @@ prefix <- ifelse(wd=="scripts", "../", "")
 
 
 # this doesn't need to be only 2018, could grab the 4-year dataset instead
-data <- read.csv(paste(prefix, "cleaned_data/2018_ancElection_commissioners_contest.csv", sep=""),
+data <- read.csv(paste(prefix, "cleaned_data/2012_2018_ancElection_contest.csv", sep=""),
                  sep=",", header=TRUE)
 
 check <- data %>% group_by(year) %>% tally()
@@ -31,7 +31,7 @@ sum %>% print(n=nrow(.))
 
 
 write.table(sum,
-            file=paste(prefix, "cleaned_data/2018_ancElection_anc.csv", sep=""),
+            file=paste(prefix, "cleaned_data/2012_2018_ancElection_anc.csv", sep=""),
             append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 

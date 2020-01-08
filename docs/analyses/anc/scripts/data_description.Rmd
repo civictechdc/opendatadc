@@ -89,6 +89,26 @@ f("../cleaned_data/2012_2018_ancElection_candidate.csv")
 
 ```
 
+
+### 2012-2018 Elections, ANC-level
+
+```{r, echo=FALSE}
+
+f("../cleaned_data/2018_ancElection_anc.csv")
+
+```
+
+- ward, year, anc -- as above
+- num_candidates -- average number of registered candidates
+- votes - average number of votes for winning candidates in ANC
+- vote_norm - average of ratio between winner votes and ballots cast (not total ANC votes)
+- engagement - average of ratio between total ANC votes and ballots cast
+
+
+
+
+
+
 ### 2012-2018 imputed turnout, ANC-level
 
 ```{r, echo=FALSE}
@@ -104,22 +124,6 @@ f("../cleaned_data/2012_2018_imputedTurnout_anc.csv")
 f("../cleaned_data/2012_2018_ballots_precinct.csv")
 
 ```
-
-### 2018 Elections, ANC-level
-
-```{r, echo=FALSE}
-
-f("../cleaned_data/2018_ancElection_anc.csv")
-
-```
-I think this should be revised to include all years, since I dont think it draws on incumbent data only available for 2018
-
-- ward, year, anc -- as above
-- num_candidates -- average number of registered candidates
-- votes - average number of votes for winning candidates in ANC
-- vote_norm - average of ratio between winner votes and ballots cast (not total ANC votes)
-- engagement - average of ratio between total ANC votes and ballots cast
-
 
 
 ### 2018 Elections and Incumbent Commissioners, contest-level
