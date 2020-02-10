@@ -10,7 +10,7 @@ election.data <- read.csv(paste(path, "/cleaned_data/election_history_R.csv", se
 
 election.data <- filter(election.data, year==2018)
 
-commissioner.data <- read.csv(paste(path, "/cleaned_data/current_anc_membership.csv", sep=""), 
+commissioner.data <- read.csv(paste(path, "/cleaned_data/2019_commissioners.csv", sep=""), 
                          sep=",", header=TRUE, stringsAsFactors=FALSE)
 colnames(commissioner.data) <- tolower(colnames(commissioner.data))
 commissioner.data <- commissioner.data %>% rename(contest_name=smd, commissioner_name=name) %>%
