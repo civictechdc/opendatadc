@@ -331,7 +331,7 @@ reg.fixed.drop <- collapsed %>% filter(!duplicitous) %>%
 
 reg.fixed.drop %<>% mutate(turnout = ballots / voters)
 
-#write.table(reg.fixed.drop, file=paste(prefix, "cleaned_data/anc_turnout_drop.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
+#write.table(reg.fixed.drop, file=paste(prefix, "cleaned_data/2012_2018_imputedTurnoutDrop_anc.csv", sep=""), sep=",", append=FALSE, quote=FALSE, row.names=FALSE, col.names=TRUE)
 
 
 
@@ -349,7 +349,7 @@ reg.fixed.drop %<>% mutate(turnout = ballots / voters)
 
 # Try to exit before test code if we're running a straight Rscript...
 if(sys.nframe() == 0L){
-    quit(save='ask')
+    quit(save='no')
 }
 
 

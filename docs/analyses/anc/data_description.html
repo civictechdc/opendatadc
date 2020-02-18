@@ -390,6 +390,13 @@ $(document).ready(function () {
 <p>e.g.</p>
 <p>2018_ancElection_commissioners_contest.csv is data from 2018 comprising both ANC Elections and subsequently incumbent commissioners, aggregated at the contest level</p>
 </div>
+<div id="pipeline" class="section level4">
+<h4>Pipeline</h4>
+<p>Commands to run the data processing steps are given in ./Makefile</p>
+<p>To make a given target, run ‘make &lt;target&gt;’ (with filepaths relative to the directory holding the Makefile)<br />
+e.g. to create 2012_2018_ancElection_contest.csv, run ‘make cleaned_data/2012_2018_ancElection_contest.csv’</p>
+<p>To create all processed data, run ‘make process’</p>
+</div>
 <div id="election-contest-level" class="section level3">
 <h3>2012-2018 Election, contest-level</h3>
 <pre><code>## [1] &quot;../cleaned_data/2012_2018_ancElection_contest.csv&quot;</code></pre>
@@ -431,6 +438,7 @@ $(document).ready(function () {
 <li>write_in_votes</li>
 <li>smd_ballots - number of ballots cast that could have included votes for this ANC election, even if they didnt</li>
 </ul>
+<p>For details on the cleaning process, run ‘make visualization/election_contest.html’</p>
 </div>
 <div id="elections-candidate-level" class="section level3">
 <h3>2012-2018 Elections, candidate-level</h3>
@@ -452,21 +460,21 @@ $(document).ready(function () {
 </div>
 <div id="elections-anc-level" class="section level3">
 <h3>2012-2018 Elections, ANC-level</h3>
-<pre><code>## [1] &quot;../cleaned_data/2018_ancElection_anc.csv&quot;</code></pre>
+<pre><code>## [1] &quot;../cleaned_data/2012_2018_ancElection_anc.csv&quot;</code></pre>
 <pre><code>##   ward year anc num_candidates    votes vote_norm engagement
-## 1    1 2018   A       1.166667 520.5000 0.8968942  0.7898821
-## 2    1 2018   B       1.166667 563.0833 0.8809508  0.8182105
-## 3    1 2018   C       1.375000 690.5000 0.8498478  0.8188041
-## 4    1 2018   D       1.600000 513.2000 0.7464116  0.8189875
-## 5    2 2018   A       1.125000 254.3750 0.9094524  0.7701379
-## 6    2 2018   B       1.222222 574.6667 0.8290255  0.8408832
+## 1    1 2012   A       1.583333 481.5000 0.7913018         NA
+## 2    1 2012   B       1.250000 544.3333 0.8999279         NA
+## 3    1 2012   C       1.500000 641.8750 0.8268040         NA
+## 4    1 2012   D       1.400000 559.8000 0.7953949         NA
+## 5    1 2014   A       1.333333 296.2500 0.8522939  0.6361803
+## 6    1 2014   B       1.500000 319.0000 0.7637401  0.7375032
 ##   prop_uncontested prop_empty
-## 1        0.8333333          0
-## 2        0.8333333          0
+## 1        0.5000000          0
+## 2        0.9166667          0
 ## 3        0.6250000          0
-## 4        0.4000000          0
-## 5        0.8750000          0
-## 6        0.7777778          0</code></pre>
+## 4        0.6000000          0
+## 5        0.6666667          0
+## 6        0.5000000          0</code></pre>
 <ul>
 <li>ward, year, anc – as above</li>
 <li>num_candidates – average number of registered candidates</li>
@@ -485,6 +493,15 @@ $(document).ready(function () {
 ## 4       1A 2018  19391    8793           3 0.4534578
 ## 5       1B 2012  18219   10836           2 0.5947637
 ## 6       1B 2014  18508    6847           2 0.3699481</code></pre>
+<p>produced by impute_turnout.R by taking _ballots_precinct.csv and apportioning precinct-level ballot and registration counts among ANCs based on geographic overlap.</p>
+<ul>
+<li>voters – imputed registered voters in ANC</li>
+<li>ballots – imputed ballots cast in ANC</li>
+<li>duplicitous – number of precincts which cross this ANCs boundary</li>
+<li>turnout – ballots / voters</li>
+</ul>
+<p>Turnout data without imputation is available by uncommenting the line that saves ‘reg.fixed.drop’ in impute_turnout.R; however this data drops something like half of precincts.</p>
+<p>For some evaluation of the imputed data, run ‘make visualization/imputed_turnout.html’</p>
 </div>
 <div id="ballot-totals-precinct-level" class="section level3">
 <h3>2012-2018 ballot totals, precinct-level</h3>
