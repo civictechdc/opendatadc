@@ -3,14 +3,18 @@
 library(tidyverse)
 library(qualV)
 
-path = getwd()
+#path = getwd()
+wd <- unlist(strsplit(getwd(), "/"))
+wd <- wd[length(wd)]
+prefix <- ifelse(wd=="scripts", "../", "")
 
-election.data <- read.csv(paste(path, "/cleaned_data/election_history_R.csv", sep=""), 
+
+election.data <- read.csv(paste(prefix, "cleaned_data/2012_2018_ancElection_contest.csv", sep=""), 
                         sep=",", header=TRUE, stringsAsFactors=FALSE)
 
 election.data <- filter(election.data, year==2018)
 
-commissioner.data <- read.csv(paste(path, "/cleaned_data/current_anc_membership.csv", sep=""), 
+commissioner.data <- read.csv(paste(prefix, "raw_data/2019_commissioners.csv", sep=""), 
                          sep=",", header=TRUE, stringsAsFactors=FALSE)
 colnames(commissioner.data) <- tolower(colnames(commissioner.data))
 commissioner.data <- commissioner.data %>% rename(contest_name=smd, commissioner_name=name) %>%
@@ -74,7 +78,7 @@ matched <- matched %>% select(-write_in, -perfect_match, -match_quality) %>% ren
 
 # write
 
-write.table(matched, file=paste(path, "/cleaned_data/2018_elections_commissioners.csv", sep=""), 
+write.table(matched, file=paste(prefix, "cleaned_data/2018_ancElection_commissioners_contest.csv", sep=""), 
              append=FALSE, quote=FALSE, sep=",", row.names=FALSE, col.names=TRUE)
 
 

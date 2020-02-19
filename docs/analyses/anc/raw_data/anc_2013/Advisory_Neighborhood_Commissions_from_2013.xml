@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin/>
+<origin/>
+<pubdate>20120608</pubdate>
+<title>Advisory Neighborhood Commissions from 2013</title>
+<geoform>vector digital data</geoform>
+<pubinfo>
+<publish>DC GIS</publish>
+</pubinfo>
+<lworkcit>
+<citeinfo>
+<title>DC Geographic Information System DC Atlas</title>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</citation>
+<descript>
+<abstract>Advisory Neighborhood Commissions (ANCs) are collections of Single Member Districts (SMDs). ANCs allow input from an advisory board made up of the residents of the neighborhoods directly affected by government action. The ANCs are the body of government with the closest official ties to the people in a neighborhood. ANCs present their positions and recommendations on issues to various District government agencies, the Executive Branch, and the Council. They also present testimony to independent agencies, boards and commissions, usually under rules of procedure specific to those entities. By law, the ANCs may also present their positions to Federal agencies. This data set reflects the boundaries approved by the DC Council in May, 2012, for official 2013 ANCs. ANC's consider a wide range of policies and programs affecting their neighborhoods. These include traffic, parking, recreation, street improvements, liquor licenses, zoning, economic development, police protection, sanitation and trash collection, and the District's annual budget. No public policy area is excluded from the purview of the Advisory Neighborhood Commissions. The intent of the ANC legislation is to ensure input from an advisory board made up of the residents of the neighborhoods directly affected by government action. The ANCs are the body of government with the closest official ties to the people in a neighborhood. ANCs present their positions and recommendations on issues to various District government agencies, the Executive Branch, and the Council. They also present testimony to independent agencies, boards and commissions, usually under rules of procedure specific to those entities. By law, the ANCs may also present their positions to Federal agencies.</abstract>
+<purpose>Advisory Neighborhood Commissions (ANCs) are collections of Single Member Districts (SMDs). ANCs allow input from an advisory board made up of the residents of the neighborhoods directly affected by government action.</purpose>
+<supplinf>The DC Board of Elections and Ethics (BOEE) is responsible for maintaining SMD boundaries. Please see the BOEE website @ http://www.dcboee.org for more background on ANCs. This data set was compiled by the DC Office of Planning.</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>20130101</caldate>
+</sngdate>
+</timeinfo>
+<current>ground condition</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>As needed</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-77.119896</westbc>
+<eastbc>-76.909016</eastbc>
+<northbc>38.995967</northbc>
+<southbc>38.791582</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>boundary</themekey>
+<themekey>Ward</themekey>
+<themekey>Advisory Neighborhood Commission</themekey>
+<themekey>ANC</themekey>
+<themekey>SMD</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>District of Columbia</placekey>
+<placekey>DCGIS</placekey>
+<placekey>Washington DC</placekey>
+<placekey>Ward</placekey>
+<placekey>DC GIS</placekey>
+<placekey>DC</placekey>
+</place>
+<temporal>
+<tempkt>None</tempkt>
+<tempkey>2002</tempkey>
+</temporal>
+</keywords>
+<accconst>None</accconst>
+<useconst>This work is licensed under a Creative Commons Attribution 4.0 International License.</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+<cntper>GIS Data Coordinator</cntper>
+</cntorgp>
+<cntpos/>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>200 I Street SE, 5th Floor</address>
+<city>Washington</city>
+<state>DC</state>
+<postal>20003</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice/>
+<cntfax>(202) 727-5660</cntfax>
+<cntemail>dcgis@dc.gov</cntemail>
+<hours>8:30 am - 5 pm</hours>
+<cntinst/>
+</cntinfo>
+</ptcontac>
+</idinfo>
+<dataqual>
+<attracc>
+<attraccr>Data believed to be complete and accurate, subject to change.</attraccr>
+</attracc>
+<complete>Data believed to be complete and accurate, subject to change.</complete>
+<lineage>
+<srcinfo>
+<srccite>
+<citeinfo>
+<pubdate>20120101</pubdate>
+<title>Single Member District Boundaries</title>
+<othercit>Act A19-0364, Advisory Neighborhood Commissions Boundaries Act of 2012 Also A19-0341, Advisory Neighborhood Commissions Boundaries Emergency Act of 2012 A19-0348, Advisory Neighborhood Commissions Boundaries Temporary Act of 2012 A19-0370, Advisory Neighborhood Commissions Boundaries Technical Correction Emergency Amendment Act of 2012</othercit>
+</citeinfo>
+</srccite>
+<srcscale>0</srcscale>
+<typesrc>None</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>20020403</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>Unknown</srccurr>
+</srctime>
+<srccitea>Single Member District Boundaries</srccitea>
+</srcinfo>
+<procstep>
+<procdesc>2002 boundaries were used as a starting point. Changes to 2002 boundaries were made using the trace tool on the geographic features referenced in the legislation text (street centerlines, census blocks, lot boundaries, ward boundaries) and merged with/split from the 2002 boundaries. Where the legislation text described boundaries that didn't follow existing features, boundaries were digitized freehand.</procdesc>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>DC Office of Planning</cntorg>
+</cntorgp>
+<cntaddr>
+<addrtype>unknown</addrtype>
+<address>200 I Street SE, 5th Floor</address>
+</cntaddr>
+</cntinfo>
+</proccont>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>GT-polygon composed of chains</sdtstype>
+<ptvctcnt>40</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>DCGIS.ANCPly</enttypl>
+<enttypd>DC Template</enttypd>
+<enttypds>DCOP</enttypds>
+</enttyp>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>OBJECTID</attrlabl>
+<attrdef>Object ID</attrdef>
+<attrdefs>DCGIS</attrdefs>
+</attr>
+<attr>
+<attrlabl>GIS_ID</attrlabl>
+<attrdef>Sequential OCTO-GIS number</attrdef>
+</attr>
+<attr>
+<attrlabl>ANC_ID</attrlabl>
+<attrdef>ANC identifier</attrdef>
+</attr>
+<attr>
+<attrlabl>NAME</attrlabl>
+<attrdef>ANC Name</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>Edited</attrlabl>
+</attr>
+<attr>
+<attrlabl>SHAPE.AREA</attrlabl>
+</attr>
+<attr>
+<attrlabl>WEB_URL</attrlabl>
+<attrdef>Web site url</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+          <udom>Positive real numbers that are automatically generated.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>SHAPE.LEN</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>SHAPE</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>GlobalID</attrlabl>
+</attr>
+<attr>
+<attrlabl>Creator</attrlabl>
+</attr>
+<attr>
+<attrlabl>Created</attrlabl>
+</attr>
+<attr>
+<attrlabl>Editor</attrlabl>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+<cntper>GIS Data Coordinator</cntper>
+</cntorgp>
+<cntpos/>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>200 I Street SE, 5th Floor</address>
+<city>Washington</city>
+<state>DC</state>
+<postal>20003</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice/>
+<cntfax>(202) 727-5660</cntfax>
+<cntemail>dcgis@dc.gov</cntemail>
+<hours>8:30 am - 5 pm</hours>
+<cntinst/>
+</cntinfo>
+</distrib>
+<resdesc>Local area network</resdesc>
+<distliab>See access and use constraints information.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>ACCESS2000</formname>
+<filedec>no compression applied</filedec>
+<transize>0.031</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://www.draft.dcgis.com/data_catalogue.asp</networkr>
+</networka>
+</computer>
+<accinstr>Local area network</accinstr>
+</onlinopt>
+</digtopt>
+</digform>
+<ordering>DC datasets can be downloaded from "http://opendata.dc.gov".</ordering>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20171018</metd>
+<metrd>01/07/04</metrd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+<cntper>GIS Data Coordinator</cntper>
+</cntorgp>
+<cntpos/>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>200 I Street SE, 5th Floor</address>
+<city>Washington</city>
+<state>DC</state>
+<postal>20003</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice/>
+<cntfax>(202) 727-5660</cntfax>
+<cntemail>dcgis@dc.gov</cntemail>
+<hours>8:30 am - 5 pm</hours>
+<cntinst/>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>

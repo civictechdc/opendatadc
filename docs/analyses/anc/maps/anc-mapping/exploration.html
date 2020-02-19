@@ -13115,7 +13115,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -13143,7 +13143,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gj_path</span> <span class="o">=</span> <span class="s2">&quot;geojson/anc.geojson&quot;</span>
@@ -13156,7 +13156,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">anc_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gj_path</span><span class="p">)</span>
@@ -13169,7 +13169,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">anc_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13185,7 +13185,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13281,7 +13281,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tried this to reduce the map complexity for Chrome, didn&#39;t work</span>
@@ -13295,7 +13295,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">embed_map</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
@@ -13322,7 +13322,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">election_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;election_data_for_anc_map.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">election_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../cleaned_data/2012_2018_ancElection_anc.csv&quot;</span><span class="p">)</span>
 <span class="n">election_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -13378,7 +13378,7 @@ div#notebook {
       <td>A</td>
       <td>1.583333</td>
       <td>481.500000</td>
-      <td>NaN</td>
+      <td>0.791302</td>
       <td>NaN</td>
       <td>0.500000</td>
       <td>0.0</td>
@@ -13390,7 +13390,7 @@ div#notebook {
       <td>B</td>
       <td>1.250000</td>
       <td>544.333333</td>
-      <td>NaN</td>
+      <td>0.899928</td>
       <td>NaN</td>
       <td>0.916667</td>
       <td>0.0</td>
@@ -13402,7 +13402,7 @@ div#notebook {
       <td>C</td>
       <td>1.500000</td>
       <td>641.875000</td>
-      <td>NaN</td>
+      <td>0.826804</td>
       <td>NaN</td>
       <td>0.625000</td>
       <td>0.0</td>
@@ -13414,7 +13414,7 @@ div#notebook {
       <td>D</td>
       <td>1.400000</td>
       <td>559.800000</td>
-      <td>NaN</td>
+      <td>0.795395</td>
       <td>NaN</td>
       <td>0.600000</td>
       <td>0.0</td>
@@ -13426,7 +13426,7 @@ div#notebook {
       <td>A</td>
       <td>1.333333</td>
       <td>296.250000</td>
-      <td>0.529246</td>
+      <td>0.852294</td>
       <td>0.63618</td>
       <td>0.666667</td>
       <td>0.0</td>
@@ -13447,7 +13447,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;anc&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">election_df</span> <span class="o">=</span> <span class="n">election_df</span><span class="p">[</span><span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
+<span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">election_df</span><span class="p">[</span><span class="s2">&quot;anc&quot;</span><span class="p">]</span>
 <span class="n">election_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">,</span> <span class="s2">&quot;anc&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">election_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">election_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13467,7 +13469,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(160, 8)
+<pre>(164, 8)
 </pre>
 </div>
 </div>
@@ -13513,7 +13515,7 @@ div#notebook {
       <td>2012</td>
       <td>1.583333</td>
       <td>481.500000</td>
-      <td>NaN</td>
+      <td>0.791302</td>
       <td>NaN</td>
       <td>0.500000</td>
       <td>0.0</td>
@@ -13524,7 +13526,7 @@ div#notebook {
       <td>2012</td>
       <td>1.250000</td>
       <td>544.333333</td>
-      <td>NaN</td>
+      <td>0.899928</td>
       <td>NaN</td>
       <td>0.916667</td>
       <td>0.0</td>
@@ -13535,7 +13537,7 @@ div#notebook {
       <td>2012</td>
       <td>1.500000</td>
       <td>641.875000</td>
-      <td>NaN</td>
+      <td>0.826804</td>
       <td>NaN</td>
       <td>0.625000</td>
       <td>0.0</td>
@@ -13546,7 +13548,7 @@ div#notebook {
       <td>2012</td>
       <td>1.400000</td>
       <td>559.800000</td>
-      <td>NaN</td>
+      <td>0.795395</td>
       <td>NaN</td>
       <td>0.600000</td>
       <td>0.0</td>
@@ -13557,7 +13559,7 @@ div#notebook {
       <td>2014</td>
       <td>1.333333</td>
       <td>296.250000</td>
-      <td>0.529246</td>
+      <td>0.852294</td>
       <td>0.63618</td>
       <td>0.666667</td>
       <td>0.0</td>
@@ -13597,7 +13599,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(40, 8)
+<pre>(41, 8)
 </pre>
 </div>
 </div>
@@ -13611,7 +13613,106 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">joined_df</span> <span class="o">=</span> <span class="n">anc_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">election_df_2018</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">turnout</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../cleaned_data/2012_2018_imputedTurnout_anc.csv&quot;</span><span class="p">)</span>
+<span class="n">turnout</span> <span class="o">=</span> <span class="n">turnout</span><span class="p">[</span><span class="n">turnout</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span>
+<span class="n">turnout</span> <span class="o">=</span> <span class="n">turnout</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anc.full&quot;</span><span class="p">:</span> <span class="s2">&quot;ANC_ID&quot;</span><span class="p">})[[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;turnout&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">turnout</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">turnout</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(41, 2)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ANC_ID</th>
+      <th>turnout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>1A</td>
+      <td>0.453458</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1B</td>
+      <td>0.454878</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1C</td>
+      <td>0.548409</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1D</td>
+      <td>0.502601</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2A</td>
+      <td>0.399852</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">joined_df</span> <span class="o">=</span> <span class="n">anc_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">election_df_2018</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">)</span>
+<span class="n">joined_df</span> <span class="o">=</span> <span class="n">joined_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">turnout</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">joined_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">joined_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -13625,7 +13726,18 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(41, 15)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13662,93 +13774,99 @@ div#notebook {
       <th>engagement</th>
       <th>prop_uncontested</th>
       <th>prop_empty</th>
+      <th>turnout</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>1.0</td>
       <td>1C</td>
       <td>http://anc.dc.gov/page/advisory-neighborhood-c...</td>
       <td>ANC 1C</td>
       <td>5218.954361</td>
       <td>1.285112e+06</td>
-      <td>POLYGON EMPTY</td>
+      <td>POLYGON ((-77.0464219248981 38.92597950466725,...</td>
       <td>2018</td>
       <td>1.375000</td>
       <td>690.500000</td>
-      <td>0.695144</td>
+      <td>0.849848</td>
       <td>0.818804</td>
       <td>0.625000</td>
       <td>0.0</td>
+      <td>0.548409</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>2.0</td>
       <td>1D</td>
       <td>http://anc.dc.gov/page/advisory-neighborhood-c...</td>
       <td>ANC 1D</td>
       <td>4224.010068</td>
       <td>9.475922e+05</td>
-      <td>POLYGON EMPTY</td>
+      <td>POLYGON ((-77.03645123520528 38.93638367371454...</td>
       <td>2018</td>
       <td>1.600000</td>
       <td>513.200000</td>
-      <td>0.608100</td>
+      <td>0.746412</td>
       <td>0.818987</td>
       <td>0.400000</td>
       <td>0.0</td>
+      <td>0.502601</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>3.0</td>
       <td>2A</td>
       <td>http://anc.dc.gov/page/advisory-neighborhood-c...</td>
       <td>ANC 2A</td>
       <td>12477.943204</td>
       <td>7.065358e+06</td>
-      <td>POLYGON EMPTY</td>
+      <td>POLYGON ((-77.05445304334567 38.90725341205063...</td>
       <td>2018</td>
       <td>1.125000</td>
       <td>254.375000</td>
-      <td>0.688037</td>
+      <td>0.909452</td>
       <td>0.770138</td>
       <td>0.875000</td>
       <td>0.0</td>
+      <td>0.399852</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
+      <td>4.0</td>
       <td>2B</td>
       <td>http://anc.dc.gov/page/advisory-neighborhood-c...</td>
       <td>ANC 2B</td>
       <td>7712.504785</td>
       <td>2.160620e+06</td>
-      <td>POLYGON EMPTY</td>
+      <td>POLYGON ((-77.0412259402753 38.91701561959232,...</td>
       <td>2018</td>
       <td>1.222222</td>
       <td>574.666667</td>
-      <td>0.698349</td>
+      <td>0.829025</td>
       <td>0.840883</td>
       <td>0.777778</td>
       <td>0.0</td>
+      <td>0.496096</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>5.0</td>
       <td>2C</td>
       <td>http://anc.dc.gov/page/advisory-neighborhood-c...</td>
       <td>ANC 2C</td>
       <td>7811.084627</td>
       <td>2.861750e+06</td>
-      <td>POLYGON EMPTY</td>
+      <td>POLYGON ((-77.02404971019487 38.90293630338282...</td>
       <td>2018</td>
       <td>1.333333</td>
       <td>417.000000</td>
-      <td>0.686430</td>
+      <td>0.847020</td>
       <td>0.806862</td>
       <td>0.666667</td>
       <td>0.0</td>
+      <td>0.459561</td>
     </tr>
   </tbody>
 </table>
@@ -13770,7 +13888,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot; No longer necessary</span>
@@ -13793,7 +13911,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13817,7 +13935,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">anc_map</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="mf">38.8899</span><span class="p">,</span> <span class="o">-</span><span class="mf">77.0091</span><span class="p">),</span>
@@ -13832,7 +13950,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">folium</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
@@ -13860,58 +13978,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;folium.features.Choropleth at 0x11b601c18&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">folium</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
-    <span class="n">geo_data</span><span class="o">=</span><span class="n">gj_path</span><span class="p">,</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">joined_df</span><span class="p">,</span>
-    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;engagement&quot;</span><span class="p">],</span>
-    <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.ANC_ID&#39;</span><span class="p">,</span>
-    <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuRd&#39;</span><span class="p">,</span>
-    <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">line_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  
-    <span class="n">highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;engagement&quot;</span><span class="p">,</span>
-    <span class="n">legend_name</span><span class="o">=</span><span class="s2">&quot;percentage of ballots where ANC candidate was marked&quot;</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
     <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;folium.features.Choropleth at 0x11be971d0&gt;</pre>
+<pre>&lt;folium.features.Choropleth at 0x12704c908&gt;</pre>
 </div>
 
 </div>
@@ -13925,7 +13998,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">folium</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
+    <span class="n">geo_data</span><span class="o">=</span><span class="n">gj_path</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">joined_df</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;engagement&quot;</span><span class="p">],</span>
+    <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.ANC_ID&#39;</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;PuRd&#39;</span><span class="p">,</span>
+    <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">line_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  
+    <span class="n">highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;engagement&quot;</span><span class="p">,</span>
+    <span class="n">legend_name</span><span class="o">=</span><span class="s2">&quot;percentage of ballots where ANC candidate was marked (complement of roll-off)&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13944,7 +14029,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;folium.map.LayerControl at 0x11b6011d0&gt;</pre>
+<pre>&lt;folium.features.Choropleth at 0x1270d1e48&gt;</pre>
 </div>
 
 </div>
@@ -13955,7 +14040,85 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">folium</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
+    <span class="n">geo_data</span><span class="o">=</span><span class="n">gj_path</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">joined_df</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ANC_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;turnout&quot;</span><span class="p">],</span>
+    <span class="n">key_on</span><span class="o">=</span><span class="s1">&#39;feature.properties.ANC_ID&#39;</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;YlOrBr&#39;</span><span class="p">,</span>
+    <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">line_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  
+    <span class="n">highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;turnout&quot;</span><span class="p">,</span>
+    <span class="n">legend_name</span><span class="o">=</span><span class="s2">&quot;estimated voter turnout&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;folium.features.Choropleth at 0x127f482e8&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;folium.map.LayerControl at 0x1270106a0&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">embed_map</span><span class="p">(</span><span class="n">anc_map</span><span class="p">)</span>
@@ -13971,7 +14134,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -13995,7 +14158,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">anc_map</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;anc_map.html&quot;</span><span class="p">)</span>
@@ -14018,6 +14181,13 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
 </div>
     </div>
   </div>
